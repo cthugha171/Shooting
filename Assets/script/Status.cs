@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public struct Status
 {
-    [SerializeField] string name;
+    public string name;
     [SerializeField] int hp;
     [SerializeField] int atk;
     [SerializeField] int def;
