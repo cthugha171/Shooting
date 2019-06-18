@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\Bullet.cs" />
+    <Compile Include="Assets\script\camerashake.cs" />
     <Compile Include="Assets\script\FannelRotate.cs" />
     <Compile Include="Assets\script\FannelShoot.cs" />
     <Compile Include="Assets\script\PlayerController.cs" />
