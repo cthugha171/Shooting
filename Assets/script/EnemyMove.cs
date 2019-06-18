@@ -10,8 +10,11 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] float speed_Stalker = 2;
     [SerializeField] EnemySpawndata data;
     [SerializeField] float leaveplaer = 50;
+    int count = 10;
     private Transform plPos;
     private GameObject player;
+    private Vector3 mov;
+    private Vector3 enemyposint;
 
     public int dataIndext = 0;//ステータスを決める
 
@@ -25,11 +28,18 @@ public class EnemyMove : MonoBehaviour
         gameObject.name = myData.name;
         plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         player = GameObject.Find("Player");
+        mov = new Vector3(0, 1, -1);
+        if (dataIndext == 5)
+        {
+            enemyposint = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, Camera.main.nearClipPlane));
+            enemyposint.z = 0;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Player");
         //エネミーのステータスごとに行動を変える
         switch (dataIndext)
         {
@@ -46,11 +56,13 @@ public class EnemyMove : MonoBehaviour
                 HiSpeed();//早い
                 break;
             case 4:
-                Stalker();//ついてくる
+                Stalker();//ホーミングを撃つ
                 break;
             case 5:
+                Dropper();//アイテム落とす
                 break;
             case 6:
+                Cannon();//固定砲台
                 break;
         }
     }
@@ -64,7 +76,7 @@ public class EnemyMove : MonoBehaviour
     {
         plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
-        transform.localPosition = plPos.localPosition - new Vector3(0, 0, leaveplaer);
+        transform.localPosition = plPos.localPosition + new Vector3(0, 0, leaveplaer);
     }
 
     void Hard()
@@ -79,6 +91,24 @@ public class EnemyMove : MonoBehaviour
 
     void Stalker()
     {
-        transform.localPosition -= Vector3.MoveTowards(this.transform.position, new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z),speed_Stalker*Time.deltaTime);
+        
+    }
+
+    void Dropper()
+    {
+        if (count <= 0)
+        {
+            mov.y = Random.Range(-8, 10);
+            mov.z = Random.Range(-2, 0);
+            count = 10;
+        }
+        count--;
+        transform.localPosition += new Vector3(mov.x, mov.y, mov.z) * Time.deltaTime;
+    }
+
+    void Cannon()
+    {
+        plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        transform.localPosition= plPos.localPosition + new Vector3(0, 0, leaveplaer);
     }
 }
