@@ -6,7 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 0.1f;
 
-    public camerashake shake;
+    public float Clampz;
+    public float Clampy;
+
+    private Vector3 playerpos;
     void Update()
     {
         //横移動
@@ -16,9 +19,17 @@ public class PlayerController : MonoBehaviour
         //代入
         this.transform.position += new Vector3(0, y, z) * speed;
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            shake.Shake(0.25f, 0.1f);
-        }
+        Clamp();
+    }
+
+    void Clamp()
+    {
+        //プレイヤーの位置を取得
+        playerpos = transform.position;
+
+        playerpos.y = Mathf.Clamp(playerpos.y, -Clampy, Clampy);
+        playerpos.z = Mathf.Clamp(playerpos.z, -Clampz, Clampz);
+
+        transform.position = playerpos;
     }
 }
