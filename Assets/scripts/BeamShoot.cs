@@ -5,7 +5,7 @@ using UnityEngine;
 public class BeamShoot : MonoBehaviour
 {
     //パーティクル
-    ParticleSystem beamParticle;
+    public ParticleSystem beamParticle;
     //画面揺れ
     public camerashake shake;
 
@@ -33,7 +33,10 @@ public class BeamShoot : MonoBehaviour
     {
         beamParticle.Stop();
         beamParticle.Play();
-        shake.Shake(0.25f, 0.1f);
+        if (shake != null)
+        {
+            shake.Shake(0.25f, 0.1f);
+        }
     }
 
     //パーティクルを止める

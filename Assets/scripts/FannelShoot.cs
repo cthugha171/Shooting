@@ -6,6 +6,7 @@ public class FannelShoot : MonoBehaviour
 {
     //入れる
     [SerializeField] private GameObject bullet = null;
+    [SerializeField] private GameObject Homing = null;
 
     public float Timer = 0;
     private float defalt = 0;
@@ -34,7 +35,7 @@ public class FannelShoot : MonoBehaviour
         {
             //時間を0に戻す
             Timer = defalt;
-            var GObullet = Instantiate(bullet, FirePos, transform.rotation);
+            var GObullet = Instantiate(Homing, FirePos, transform.rotation);
         }
 
         //スペースで発射
