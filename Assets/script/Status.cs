@@ -7,8 +7,8 @@ using UnityEngine;
 public struct Status
 {
     public string name;
+    public int atk;
     [SerializeField] int hp;
-    [SerializeField] int atk;
     [SerializeField] int def;
     [SerializeField] bool isDead;
 
