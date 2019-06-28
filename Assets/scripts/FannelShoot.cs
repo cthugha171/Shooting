@@ -25,10 +25,19 @@ public class FannelShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Shot();
+    }
+
+    /// <summary>
+    /// 弾を撃つ
+    /// </summary>
+    void Shot()
+    {
         //回転し続けるファンネルをの位置を取得
         Vector3 FirePos = new Vector3(this.transform.position.x,
-            this.transform.position.y, this.transform.position.z + 1);
+            this.transform.position.y, this.transform.position.z);
 
+        //ここコルーチン使おう！
         //時間加算
         Timer += Time.deltaTime;
         if (Timer > interbal)

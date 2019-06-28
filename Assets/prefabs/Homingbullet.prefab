@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: {x: 0, y: 0, z: 0}
-  target: {fileID: 4100480830673404563, guid: 406712b625eeb7d4bad61e5a8c938c6d, type: 3}
+  target: {fileID: 0}
 --- !u!96 &8701684161470476872
 TrailRenderer:
   serializedVersion: 2

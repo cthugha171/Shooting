@@ -15,6 +15,11 @@ public class FannelRotate : MonoBehaviour
 
     void Update()
     {
+        RotFannel();
+    }
+
+    void RotFannel()
+    {
         //プレイヤーのトランスフォームを取得
         GameObject target = GameObject.Find("Player");
         targetPos = target;

@@ -9,8 +9,11 @@ public class HomingLaser : MonoBehaviour
     Vector3 velocity;//弾の速度
     Vector3 position;//発射する初期位置
     public Vector3 acceleration;//加速度
-    public Transform target;//ターゲットをセット
+    //public Transform target;//ターゲットをセット
     float period = 2.0f;//敵に当たるまでの時間
+
+    GameObject enemy;
+    Vector3 EnemyPos;
 
     void Start()
     {
@@ -18,17 +21,35 @@ public class HomingLaser : MonoBehaviour
         position = this.transform.position;
         rigid = GetComponent<Rigidbody>();
 
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        EnemyPos = enemy.transform.position;
+
         //初速度をランダムで加える
         velocity = new Vector3(0, Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));
     }
 
     void Update()
     {
+        Homing();
+    }
+
+    void FixedUpdate()
+    {
+        // 移動処理
+        rigid.MovePosition(transform.position + velocity * Time.deltaTime);
+        Destroy(this.gameObject, 2.5f);
+    }
+
+    /// <summary>
+    /// 移動の計算
+    /// </summary>
+    void Homing()
+    {
         //加速度の初期化
         acceleration = Vector3.zero;
 
         //ターゲットとの距離を計算
-        var diff = target.position - this.transform.position;
+        var diff = EnemyPos - this.transform.position;
 
         //加速度の計算
         acceleration += (diff - velocity * period) * 2f
@@ -47,12 +68,9 @@ public class HomingLaser : MonoBehaviour
         velocity += acceleration * Time.deltaTime;
     }
 
-    void FixedUpdate()
-    {
-        // 移動処理
-        rigid.MovePosition(transform.position + velocity * Time.deltaTime);
-    }
-
+    /// <summary>
+    /// 当たった処理
+    /// </summary>
     void OnCollisionEnter()
     {
         // 何かに当たったら自分自身を削除
