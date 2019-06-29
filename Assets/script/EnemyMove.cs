@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour
 
     private Coroutine coroutine;
 
-    public int dataIndext = 0;//ステータスを決める
+    public int dataIndext = 1;//ステータスを決める
 
     Status myData;//ステータスを入れる箱
 
@@ -39,14 +39,8 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.x);
-        y_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.y);
-        z_abs = Mathf.Abs(this.gameObject.transform.localPosition.z - player.transform.localPosition.z);
+        
 
-        if(coroutine==null)
-        {
-            coroutine = StartCoroutine(MoveCoroutine());
-        }
         //エネミーのステータスごとに行動を変える
         switch (dataIndext)
         {
@@ -92,9 +86,7 @@ public class EnemyMove : MonoBehaviour
 
     void Shootable()
     {
-        plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        transform.localPosition = plPos.localPosition + new Vector3(0, 0, leaveplayer);
+        this.transform.LookAt(player.transform);
     }
 
     void Hard()
@@ -109,7 +101,14 @@ public class EnemyMove : MonoBehaviour
 
     void Stalker()
     {
-        transform.localPosition -= plPos.localPosition + new Vector3(0, 0, leaveplayer);
+        x_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.x);
+        y_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.y);
+        z_abs = Mathf.Abs(this.gameObject.transform.localPosition.z - player.transform.localPosition.z);
+
+        if (coroutine==null)
+        {
+            coroutine = StartCoroutine(MoveCoroutine());
+        }
     }
 
     void Dropper()
@@ -126,6 +125,7 @@ public class EnemyMove : MonoBehaviour
 
     void Cannon()
     {
+        transform.LookAt(player.transform);
         plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         transform.localPosition= plPos.localPosition + new Vector3(0, 0, leaveplayer);
     }

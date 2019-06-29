@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!1001 &163609930
@@ -387,6 +392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -596,6 +606,11 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverDistance.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!1 &534669902
@@ -649,8 +664,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -674,7 +689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 8, y: 0, z: 0}
+  m_LocalPosition: {x: 8, y: 0, z: -4.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -715,7 +730,7 @@ PrefabInstance:
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
@@ -725,7 +740,7 @@ PrefabInstance:
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
@@ -740,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
@@ -1012,6 +1027,11 @@ PrefabInstance:
       propertyPath: InitialModule.startRotationX.scalar
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!1001 &1137897691
@@ -1155,6 +1175,16 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.maxNumParticles
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -1306,6 +1336,26 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 4090712353830757700, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090712353830757700, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090712353830757700, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!1001 &2262500473049290300
@@ -1449,5 +1499,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1304120761}
-    m_RemovedComponents: []
+    - target: {fileID: 4090712353830757700, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
