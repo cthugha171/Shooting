@@ -35,8 +35,7 @@ public class SliderTest : MonoBehaviour
         //コルーチンの実行
         StockUp();
         ShotBeam();
-        IsShot = Inscr.IsShot;
-        Debug.Log(IsShot);   
+        IsShot = Inscr.IsShot; 
     }
 
     private IEnumerator CountChage()
@@ -67,22 +66,15 @@ public class SliderTest : MonoBehaviour
         else if (slider.value >= 30 && slider.value < 60)
         {
             Stock = 1;
-            //オレンジ
-            sliderImage.color = new Color32(255,102, 0, 255);
-        }
-        //60<=v<90
-        else if (slider.value >= 60 && slider.value < 90)
-        {
-            Stock = 2;
-            //薄黄色
-            sliderImage.color = new Color32(255, 204, 0, 255);
-        }
-        //v>=90
-        else if (slider.value >= 90)
-        {
-            Stock = 3;
             //黄色
             sliderImage.color = new Color32(255, 255, 0, 255);
+        }
+        //v>=60
+        else if (slider.value >= 60)
+        {
+            Stock = 2;
+            //黄緑色(51,255,0)
+            sliderImage.color = new Color32(51, 255, 0, 255);
         }
     }
 
