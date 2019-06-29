@@ -91,7 +91,6 @@ public class EnemyShot : MonoBehaviour
         {
             var _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
            //_bullet.transform.position=Vector3.MoveTowards(_bullet.transform.position,player.transform.position,)
-            makeBullet++;
             Debug.Log("球を発射");
             Destroy(_bullet, 5);
         }
@@ -128,6 +127,7 @@ public class EnemyShot : MonoBehaviour
 
     private void Cannon()
     {
+        transform.LookAt(player.transform);
         if (makeBullet % 60 == 0)
         {
             _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
