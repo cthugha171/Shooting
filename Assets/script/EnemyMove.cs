@@ -126,6 +126,5 @@ public class EnemyMove : MonoBehaviour
     void Cannon()
     {
         transform.LookAt(player.transform);
-        transform.localPosition=new Vector3(0, player.transform.position.y - 3, player.transform.position.z + 2);
     }
 }
