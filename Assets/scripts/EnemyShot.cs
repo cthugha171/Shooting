@@ -5,92 +5,133 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
-    private ParticleSystem bullet;
-    private Status myData;//ステータスを入れる箱
-    private string Ename;
+    [SerializeField] private GameObject bullet;
+    [SerializeField] private int shotSpeed = 5;
+    [SerializeField] private EnemyMove move;
+    private GameObject player;
+    private GameObject _bullet;
+
+    private int dataNum;
+    private int makeBullet;//弾の発射間隔用
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        bullet=GetComponent<ParticleSystem>();
-        myData = GetComponent<Status>();
-        Ename = myData.name;
-    }
 
-    private void OnParticleCollision(GameObject other)
-    {
-        other.Damage(myData.atk);
+        dataNum = move.dataIndext;
+        Debug.Log(dataNum);
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        makeBullet++;
 
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (player != null)
         {
             Debug.Log("Player見つけたぜ");
-            switch (Ename)
+            Debug.Log(dataNum);
+
+            switch (dataNum)
             {
-                case "突っ込む":
+                case 0:
                     Rash();//突進
+                    Debug.Log("猪突猛進");
                     break;
-                case "弾":
+                case 1:
+                    Debug.Log("俺弾撃つ");
                     Shootable();//弾撃ってくる
                     break;
-                case "硬い":
+                case 2:
+                    Debug.Log("カッチカチ");
                     Hard();//硬い
                     break;
-                case "高速":
+                case 3:
                     HiSpeed();//早い
+                    Debug.Log("⊂二二二（ ＾ω＾）二⊃ ﾌﾞｰﾝ");
                     break;
-                case "追尾":
+                case 4:
+                    Debug.Log("まっがーれ");
                     Stalker();//ホーミングを撃つ
                     break;
-                case "アイテム":
+                case 5:
+                    Debug.Log("あああああ");
                     Dropper();//アイテム落とす
                     break;
-                case "固定砲台":
+                case 6:
+                    Debug.Log("ズドン");
                     Cannon();//固定砲台
+                    break;
+                default:
+                    Debug.Log("いないものは消しますね");
+                    Destroy(gameObject);
                     break;
             }
         }
     }
 
+    private void OnParticleCollision(GameObject other)
+    {
+
+    }
+
     private void Rash()
     {
-        throw new NotImplementedException();
+        return;
     }
-    
+
     private void Shootable()
     {
-        bullet.Play();
+        if (makeBullet % 60 == 0)
+        {
+            var _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+            //_bullet.transform.position=Vector3.MoveTowards(_bullet.transform.position,player.transform.position,)
+            Debug.Log("球を発射");
+            Destroy(_bullet, 5);
+        }
+
     }
 
     private void HiSpeed()
     {
-        throw new NotImplementedException();
+        return;
     }
 
     private void Hard()
     {
-        throw new NotImplementedException();
+        if (makeBullet % 60 == 0)
+        {
+            var _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+            Destroy(_bullet, 10);
+        }
     }
 
     private void Stalker()
     {
-        throw new NotImplementedException();
+        if (makeBullet % 60 == 0)
+        {
+            var _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+            Destroy(_bullet, 10);
+        }
     }
 
     private void Dropper()
     {
-        throw new NotImplementedException();
+        return;
     }
 
     private void Cannon()
     {
-        throw new NotImplementedException();
+        transform.LookAt(player.transform);
+        if (makeBullet % 60 == 0)
+        {
+            _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+            Destroy(_bullet, 10);
+        }
     }
 }
-
-
