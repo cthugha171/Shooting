@@ -90,7 +90,11 @@ public class EnemyShot : MonoBehaviour
         if (makeBullet % 60 == 0)
         {
             var _bullet = Instantiate(bullet, transform.position + new Vector3(0, 0, -1), Quaternion.identity);
+<<<<<<< HEAD:Assets/scripts/EnemyShot.cs
             //_bullet.transform.position=Vector3.MoveTowards(_bullet.transform.position,player.transform.position,)
+=======
+           //_bullet.transform.position=Vector3.MoveTowards(_bullet.transform.position,player.transform.position,)
+>>>>>>> 2ac122fa4912b748d01bd61358107337c810aeba:Assets/script/EnemyShot.cs
             Debug.Log("球を発射");
             Destroy(_bullet, 5);
         }
@@ -134,4 +138,8 @@ public class EnemyShot : MonoBehaviour
             Destroy(_bullet, 10);
         }
     }
+<<<<<<< HEAD:Assets/scripts/EnemyShot.cs
 }
+=======
+}
+>>>>>>> 2ac122fa4912b748d01bd61358107337c810aeba:Assets/script/EnemyShot.cs

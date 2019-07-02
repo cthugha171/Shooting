@@ -126,7 +126,5 @@ public class EnemyMove : MonoBehaviour
     void Cannon()
     {
         transform.LookAt(player.transform);
-        plPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        transform.localPosition= plPos.localPosition + new Vector3(0, 0, leaveplayer);
     }
 }
