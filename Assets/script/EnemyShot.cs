@@ -73,6 +73,10 @@ public class EnemyShot : MonoBehaviour
                     break;
             }
         }
+        else
+        {
+            return;
+        }
     }
 
     private void OnParticleCollision(GameObject other)
