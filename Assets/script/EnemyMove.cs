@@ -11,13 +11,14 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float leaveplayer = 50;
     [SerializeField] private EnemySpawndata data;
     [SerializeField] private GameObject player;
-    int count = 10;
     private Transform plPos;
     private Vector3 mov;
     private Vector3 enemyposint;
+    private int count = 10;
     private float x_abs;
     private float y_abs;
     private float z_abs;
+    public float clampY;
 
     private Coroutine coroutine;
 
@@ -31,9 +32,12 @@ public class EnemyMove : MonoBehaviour
     {
         myData = data.statuses[dataIndext];
         gameObject.name = myData.name;
+        enemyposint = this.transform.position;
         
         mov = new Vector3(0, 1, -1);
     }
+
+    
 
     // Update is called once per frame
     void Update()
@@ -129,7 +133,7 @@ public class EnemyMove : MonoBehaviour
             count = 10;
         }
         count--;
-        transform.localPosition += new Vector3(mov.x, mov.y, mov.z) * Time.deltaTime;
+        transform.localPosition += new Vector3(mov.x, Mathf.Clamp(mov.y, -clampY, clampY), mov.z) * Time.deltaTime;
     }
 
     void Cannon()

@@ -159,6 +159,7 @@ MonoBehaviour:
   leaveplayer: 10
   data: {fileID: 11400000, guid: f5aeca767c5e6f944ace6e24232e3d83, type: 2}
   player: {fileID: 2262500471937358725, guid: 5f451e8fe4f749f479b97317020e4631, type: 3}
+  clampY: 100
   dataIndext: 5
 --- !u!54 &1231243443
 Rigidbody:
