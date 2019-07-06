@@ -71,11 +71,16 @@ public class EnemyMove : MonoBehaviour
     {
         float speed = speed_Stalker * Time.deltaTime;
 
-        while(x_abs>3||y_abs>3||z_abs>3)
+        Debug.Log("MoveCroutine");
+        while (x_abs > 3 || y_abs > 3 || z_abs > 3)
         {
-            yield return new WaitForEndOfFrame();
+            Debug.Log("ENemy Move Start " + speed);
+            //yield return new WaitForEndOfFrame();
+            yield return null;
             this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, player.transform.position, speed);
+            Debug.Log("EnemyMove");
         }
+        Debug.Log("完了");
     }
 
     void Rash()
@@ -107,6 +112,7 @@ public class EnemyMove : MonoBehaviour
         x_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.x);
         y_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.y);
         z_abs = Mathf.Abs(this.gameObject.transform.localPosition.z - player.transform.localPosition.z);
+
 
         if (coroutine==null)
         {
