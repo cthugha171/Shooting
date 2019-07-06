@@ -31,7 +31,6 @@ public class EnemyMove : MonoBehaviour
     {
         myData = data.statuses[dataIndext];
         gameObject.name = myData.name;
-        plPos = player.GetComponent<Transform>();
         
         mov = new Vector3(0, 1, -1);
     }
@@ -87,6 +86,10 @@ public class EnemyMove : MonoBehaviour
     void Shootable()
     {
         this.transform.LookAt(player.transform);
+        if(this.transform.position.x>=player.transform.position.x)
+        {
+            transform.localPosition -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
+        }
     }
 
     void Hard()
@@ -126,5 +129,6 @@ public class EnemyMove : MonoBehaviour
     void Cannon()
     {
         transform.LookAt(player.transform);
+        transform.localPosition -= new Vector3(0, 0, speed_Hard*Time.deltaTime);
     }
 }
