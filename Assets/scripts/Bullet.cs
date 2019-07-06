@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        this.transform.position += new Vector3(0, 0, speed);
+        this.transform.position += transform.forward * speed;
         Destroy(this.gameObject, 5);
     }
 }

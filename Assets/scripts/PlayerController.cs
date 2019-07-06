@@ -38,6 +38,14 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Clamp();
+
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            if (Physics.Linecast(transform.position, transform.position + transform.forward * 5.0f))
+            {
+                Debug.Log("aaaaaaaaa");
+            }
+        }
     }
 
     /// <summary>
@@ -81,6 +89,15 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
+    {
+        //Enemyとぶつかったらコルーチンを実行する
+        if (other.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("Damage");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         //Enemyとぶつかったらコルーチンを実行する
         if (other.gameObject.tag == "Enemy")

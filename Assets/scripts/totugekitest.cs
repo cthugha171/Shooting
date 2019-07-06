@@ -59,11 +59,12 @@ public class totugekitest : MonoBehaviour
                 timer -= Time.deltaTime;
                 if (timer < timer/2)
                 {
-                    //その位置に向かう(自分の位置、ターゲットの位置、移動速度)
+                    //元居た位置に向かう(自分の位置、ターゲットの位置、移動速度)
                     this.transform.position = Vector3.MoveTowards(transform.position, defaultPos, step);
                     //元の位置に戻ったら
                     if (this.transform.position == defaultPos)
                     {
+                        timer = InitTimer;
                         state = 0;
                     }
                 }

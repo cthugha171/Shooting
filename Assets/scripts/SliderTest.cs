@@ -50,7 +50,7 @@ public class SliderTest : MonoBehaviour
 
     void Accumulate()
     {
-        slider.value += 0.1f;
+        slider.value += 10f;
     }
 
     void StockUp()
