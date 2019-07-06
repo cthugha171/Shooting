@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\script\BackGround.cs" />
+    <Compile Include="Assets\script\BaclGround_DownUp.cs" />
     <Compile Include="Assets\script\BulletMove.cs" />
     <Compile Include="Assets\script\EneBullet.cs" />
     <Compile Include="Assets\script\EnemyMove.cs" />
