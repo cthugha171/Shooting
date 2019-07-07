@@ -18,9 +18,14 @@ public class BossMoveTest : MonoBehaviour
     public GameObject BossShoot;
     //プレファブを操作するため
     GameObject FireShot;
-
-    public ParticleSystem BeamParticle;
+    //ボスビームの当たり判定用のコライダーの状態
     private GameObject BeamCollider;
+    //弾道予測線
+    private GameObject RedLine;
+    //点滅用
+    private Renderer renderer;
+    //ボスのパーティクル
+    private ParticleSystem[] particles;
 
     #region 突撃に使った変数たち
 
@@ -40,14 +45,16 @@ public class BossMoveTest : MonoBehaviour
     bool totu = false;
     #endregion
 
+    //ボスの状態一覧
     private enum BossState
     {
         Move,//移動
         Shot,//攻撃
         Totugeki,//突進
         Beam,//ボスビーム
-        DecideMove,//ボスの行動決定
+        DecideAction,//ボスの行動決定
     }
+    //ボスの状態宣言
     BossState bossState;
 
     // Start is called before the first frame update
@@ -55,24 +62,67 @@ public class BossMoveTest : MonoBehaviour
     {
         //タイマーを代入して初期化できるようにする
         ResetTimer = Timer;
-
-        BeamParticle = GetComponent<ParticleSystem>();
-        //BeamParticle.Stop();
-        BeamCollider = transform.GetChild(1).gameObject;
-        BeamCollider.SetActive(false);
-
-        //初期化
+        particles = GetComponentsInChildren<ParticleSystem>();
+        BeamCollider = transform.GetChild(1).gameObject;//1はビーム本体
+        RedLine = transform.GetChild(2).gameObject;//2は弾道予測線
+        BeamCollider.SetActive(false);//ビームの当たり判定
+        RedLine.SetActive(false);//ビームの表示
+        //色変更に使ったやつ
+        renderer = GetComponent<Renderer>();
+        //突撃タイマーの初期化
         InitTimer = timer;
-        StartCoroutine("BeamShot");
     }
 
     // Update is called once per frame
     void Update()
     {
-        //BossStateChanger();
-        //Debug.Log(bossState);
+        BossStateChanger();
     }
 
+    //ボスの状態変更
+    void BossStateChanger()
+    {
+        switch (bossState)
+        {
+            case BossState.Move:
+                Move();
+                Timer -= Time.deltaTime;
+                if (Timer < 0)
+                {
+                    Timer = ResetTimer;
+                    ChangeState(BossState.DecideAction);
+                }
+                break;
+            case BossState.Shot:
+                //タイマーが初期化されたとき弾を発射状態にする
+                if (Timer == ResetTimer) OnBossShot();
+                Move();
+                Timer -= Time.deltaTime;
+                if (Timer / 2 < 0)
+                {
+                    Timer = ResetTimer;
+                    ChangeState(BossState.DecideAction);
+                }
+                break;
+            case BossState.Totugeki:
+                BossTotugeki();
+                if (totu)
+                {
+                    ChangeState(BossState.DecideAction);
+                }
+                break;
+            case BossState.Beam:
+
+                //終了処理はBeamShot()に直接入ってる
+
+                break;
+            case BossState.DecideAction:
+                DecideAction();
+                break;
+            default:
+                break;
+        }
+    }
     //ボスの基本の移動
     void Move()
     {
@@ -81,83 +131,6 @@ public class BossMoveTest : MonoBehaviour
         MoveVerticle = new Vector3(0, playerpos.y, this.transform.position.z);
         this.transform.position = Vector3.MoveTowards(transform.position, MoveVerticle, step);
     }
-
-    void BossStateChanger()
-    {
-        switch (bossState)
-        {
-            //動くモード
-            case BossState.Move:
-                //動きます
-                Move();
-                //タイマーを減らす
-                Timer -= Time.deltaTime;
-                //タイマーが0より小さくなったら
-                if (Timer < 0)
-                {
-                    //タイマーを初期化
-                    Timer = ResetTimer;
-                    //移動モード終了
-                    bossState = BossState.DecideMove;
-                }
-                break;
-            //弾発射モード
-            case BossState.Shot:
-                //タイマーが初期化されたとき弾を発射状態にする
-                if (Timer == ResetTimer) OnBossShot();
-                //弾を撃った状態で動く
-                Move();
-                //時間を減らす
-                Timer -= Time.deltaTime;
-                //タイマーが0よりちいさくなったら
-                if (Timer < 0)
-                {
-                    //タイマーを初期化
-                    Timer = ResetTimer;
-                    //弾を撃つモード終了
-                    bossState = BossState.DecideMove;
-                }
-                break;
-            //突撃モード
-            case BossState.Totugeki:
-                //突撃する（エラーの原因はここ
-                //突撃の途中でも強制終了しているため、変な場所で次のモーションに入っている）
-                //（突撃させたい回数をfor文で回せれば解決しそう）
-                BossTotugeki();
-                if (totu)
-                {
-                    //突撃終了
-                    bossState = BossState.DecideMove;
-                }
-                break;
-            case BossState.Beam:
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    //ビーム終了
-                    bossState = BossState.DecideMove;
-                    //ここ下にコルーチンを書くといいらしい？
-                    StartCoroutine("BeamShot");
-                }
-                break;
-            case BossState.DecideMove:
-                //一応タイマーを初期化
-                Timer = ResetTimer;
-                //突撃状態初期化
-                totu = false;
-                //弾発射状態終了
-                if (Timer == ResetTimer) OffBossShot();
-                StopCoroutine("BeamShot");
-                //次の行動を決定
-                NextMove = Random.Range(0, 4);
-                if (NextMove == 0) bossState = BossState.Move;//0なら移動
-                if (NextMove == 1) bossState = BossState.Shot;//1ならショット
-                if (NextMove == 2) bossState = BossState.Totugeki;//2なら突撃
-                break;
-            default:
-                break;
-        }
-    }
-
     //ボスの弾発射開始
     void OnBossShot()
     {
@@ -173,6 +146,8 @@ public class BossMoveTest : MonoBehaviour
     //ボスの突撃
     void BossTotugeki()
     {
+        //色を変更
+        renderer.material.color = Color.green;
         //移動する時間の計算用
         float step = totuSpeed * Time.deltaTime;
         switch (state)
@@ -212,6 +187,8 @@ public class BossMoveTest : MonoBehaviour
                     {
                         timer = InitTimer;
                         state = 0;
+                        //色を戻す  
+                        renderer.material.color = Color.white;
                         totu = true;
                     }
                 }
@@ -220,37 +197,121 @@ public class BossMoveTest : MonoBehaviour
                 break;
         }
     }
-
+    //ボスのビーム
     IEnumerator BeamShot()
     {
-        //五秒動いて
-        Move();
-        yield return new WaitForSeconds(2.0f);
+        //2秒動いて
+        //Time.timeSinceLevelLoadはゲームを起動してからの時間
+        //コルーチンの中で使うのであれば、Time.deltaよりいいらしい
+        float endTime = Time.timeSinceLevelLoad + 2.0f;
+        Debug.Log("プレイヤーの位置を補足...");
+        while (endTime > Time.timeSinceLevelLoad)
+        {
+            Move();
+            yield return null;
+        }
 
+        //動きを止める
         //点滅したり、エネルギー溜めたりする
         Debug.Log("チャージ中...");
+        particles[1].Play();
         yield return new WaitForSeconds(3.0f);
 
         //弾道予測線を出したら
+        particles[1].Stop();
         Debug.Log("弾道予測線表示..");
-        yield return new WaitForSeconds(1.0f);
+        RedLine.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
 
         //ビームを発射!!!
-        //BeamParticle.Stop();
-        //BeamParticle.Play();
+        RedLine.SetActive(false);
+        particles[0].Stop();
+        particles[0].Play();
         BeamCollider.SetActive(true);
         Debug.Log("発射！！");
         yield return new WaitForSeconds(5.0f);
 
         //ビーム停止
-        //BeamParticle.Stop();
+        particles[0].Stop();
         BeamCollider.SetActive(false);
         Debug.Log("終了");
-        bossState = BossState.DecideMove;
-
-        //ビームのことについて先生に聞きに行こう！
-        //子オブジェクトのパーティクルを制御する方法
-        //処理が終了したら次のstateに移動する方法
-        //
+        bossState = BossState.DecideAction;
     }
+    //ボスの行動を決める
+    void DecideAction()
+    {
+        //一応タイマーを初期化
+        Timer = ResetTimer;
+        //突撃状態初期化
+        totu = false;
+        //弾発射状態終了
+        if (Timer == ResetTimer) OffBossShot();
+        StopCoroutine("BeamShot");
+        //次の行動を決定
+        NextMove = Random.Range(0, 9);
+        if (NextMove == 0) ChangeState(BossState.Move); //0なら移動
+        if (0 < NextMove && NextMove <= 6) ChangeState(BossState.Shot); //0<x<=6ならショット
+        if (NextMove == 7) ChangeState(BossState.Totugeki); //7なら突撃
+        if (NextMove == 8) ChangeState(BossState.Beam);//8ならビーム
+    }
+    //ボスの状態がビームになった時に一度だけ呼び出したいもの
+    void OnStateEnterBeam()
+    {
+        StartCoroutine("BeamShot");
+    }
+
+
+    //状態変更に使える
+    //引数は移動したい状態
+    void ChangeState(BossState state)
+    {
+        //現在の状態が移動したい状態と違ったら
+        if (bossState != state)
+        {
+
+            //現在の状態の終了
+            OnStateExit(bossState);
+
+            //移動したい状態を代入
+            bossState = state;
+
+            //次の状態まで呼び出す
+            OnStateEnter(state);
+
+        }
+    }
+    //現在の状態が始まった時に一度だけ呼ばれる
+    void OnStateEnter(BossState state)
+    {
+        //切り替えたい状態を選択する
+        switch (state)
+        {
+            //状態変更
+            case BossState.Beam:
+                OnStateEnterBeam();
+                break;
+        }
+    }
+    //現在の状態を終了するときに一回呼ばれる
+    void OnStateExit(BossState state)
+    {
+
+    }
+    //いつか使うであろうボスの点滅
+    //IEnumerator ColorAlpha()
+    //{
+    //    int count = 30;
+    //    while (count > 0)
+    //    {
+    //        //透明にする
+    //        renderer.material.color = Color.red;
+    //        //0.05秒待つ
+    //        yield return new WaitForSeconds(0.05f);
+    //        //元に戻す
+    //        renderer.material.color = Color.white;
+    //        //0.05秒待つ
+    //        yield return new WaitForSeconds(0.05f);
+    //        count--;
+    //    }
+    //}
 }

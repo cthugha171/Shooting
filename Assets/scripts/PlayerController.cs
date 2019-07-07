@@ -38,14 +38,6 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Clamp();
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (Physics.Linecast(transform.position, transform.position + transform.forward * 5.0f))
-            {
-                Debug.Log("aaaaaaaaa");
-            }
-        }
     }
 
     /// <summary>
@@ -72,6 +64,12 @@ public class PlayerController : MonoBehaviour
                 MoveHor = Input.GetAxisRaw("Horizontal");
                 //縦移動
                 MoveVer = Input.GetAxisRaw("Vertical");
+                //左シフトを押しているときは速度低下
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    MoveHor /= 2;
+                    MoveVer /= 2;
+                }
                 //代入
                 playerpos += new Vector3(0, MoveVer, MoveHor) * speed;
                 break;
@@ -80,6 +78,13 @@ public class PlayerController : MonoBehaviour
                 MoveHor = Input.GetAxisRaw("Horizontal");
                 //縦移動
                 MoveVer = Input.GetAxisRaw("Vertical");
+
+                //左シフトを押しているときは速度低下
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    MoveHor /= 2;
+                    MoveVer /= 2;
+                }
                 //代入
                 playerpos += new Vector3(0, -MoveHor, MoveVer) * speed;
                 break;

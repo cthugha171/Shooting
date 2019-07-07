@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyShot : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
-    //private int count = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -15,12 +14,11 @@ public class EnemyShot : MonoBehaviour
 
     public IEnumerator Shot()
     {
-        while (true/*count > 0*/)
+        while (true)
         {
             //弾を撃つ処理を書く
             var ebullet = Instantiate(bullet, transform.position, transform.rotation);
-            yield return new WaitForSeconds(0.3f);
-            //count--;
+            yield return new WaitForSeconds(0.2f);
         }
     }
 }

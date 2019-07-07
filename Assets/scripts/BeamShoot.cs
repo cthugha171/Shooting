@@ -54,11 +54,14 @@ public class BeamShoot : MonoBehaviour
             case 1:
                 if (Input.GetMouseButtonDown(0))
                 {
+                    state = 2;
                     IsShot = true;
-                    Shot();
-                    BeamTimer -= Time.deltaTime;
-                    IsShot = false;
                 }
+                break;
+            case 2:
+                Shot();
+                BeamTimer -= Time.deltaTime;
+                IsShot = false;
                 if (BeamTimer < 0)
                 {
                     BeamTimer = timer;
