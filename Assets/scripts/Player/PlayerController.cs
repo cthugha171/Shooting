@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     GameObject InGMObject;
     GameManager InGMScript;
 
+    
+
     //範囲制限
     public float Clampz;
     public float Clampy;
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
         InGMScript = InGMObject.GetComponent<GameManager>();
         //プレイヤーの位置を取得
         playerpos = this.transform.position;
+       
     }
     void Update()
     {

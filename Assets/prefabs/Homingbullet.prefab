@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8701684161470476879}
   - component: {fileID: 8701684161470476876}
   - component: {fileID: 8701684161470476877}
+  - component: {fileID: 7568019805536682481}
   - component: {fileID: 8701684161470476866}
   - component: {fileID: 8701684161470476872}
   m_Layer: 10
@@ -111,6 +112,30 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7568019805536682481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8701684161470476867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa65231af203aae41b75b75159f2a1ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status:
+    name: 
+    atk: 1
+    hp: 0
+    def: 0
+    isDead: 0
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  player: {fileID: 0}
 --- !u!114 &8701684161470476866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: {x: 0, y: 0, z: 0}
-  target: {fileID: 0}
 --- !u!96 &8701684161470476872
 TrailRenderer:
   serializedVersion: 2

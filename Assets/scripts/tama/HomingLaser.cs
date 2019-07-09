@@ -14,6 +14,7 @@ public class HomingLaser : MonoBehaviour
 
     GameObject enemy;
     Vector3 EnemyPos;
+    GameObject benemy;
 
     void Start()
     {
@@ -22,7 +23,11 @@ public class HomingLaser : MonoBehaviour
         rigid = GetComponent<Rigidbody>();
 
         enemy = GameObject.FindGameObjectWithTag("Enemy");
-        EnemyPos = enemy.transform.position;
+        benemy = GameObject.FindGameObjectWithTag("Benemy");
+        if (enemy == null) EnemyPos = new Vector3(0, 0, 10);
+        else EnemyPos = enemy.transform.position;
+        if (benemy == null) EnemyPos = new Vector3(0, 0, 10);
+        else EnemyPos = benemy.transform.position;
 
         //初速度をランダムで加える
         velocity = new Vector3(0, Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));

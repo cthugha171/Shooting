@@ -8,11 +8,11 @@ public class Item : MonoBehaviour
     void Update()
     {
         //右から左へ
-        this.transform.position += new Vector3(0, 0, -speed);
-        Destroy(this.gameObject, 5);
+        //this.transform.position += new Vector3(0, 0, -speed);
+        //Destroy(this.gameObject, 5);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {

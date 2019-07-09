@@ -22,7 +22,7 @@ public class GetItem : MonoBehaviour
         fannel2.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Item")
         {
@@ -30,6 +30,7 @@ public class GetItem : MonoBehaviour
             {
                 fannel1.SetActive(true);
                 state = 1;
+                
                 return;
             }
         }
@@ -39,6 +40,7 @@ public class GetItem : MonoBehaviour
             {
                 fannel2.SetActive(true);
                 state = 2;
+                
             }
         }
     }
