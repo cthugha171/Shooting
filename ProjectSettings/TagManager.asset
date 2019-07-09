@@ -5,7 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+<<<<<<< HEAD
   - Item
+=======
+  - DeathPoint
+  - Boss
+>>>>>>> enemy
   layers:
   - Default
   - TransparentFX

@@ -66,6 +66,7 @@
   <ItemGroup>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Assets\scripts\AngleState.cs" />
 =======
 >>>>>>> 88b378a37000aab1deab3dc5486a7c3a0374a8f1
@@ -107,6 +108,10 @@
     <Reference Include="Unity.Analytics.DataPrivacy">
       <HintPath>C:/Users/KPC-018A1434/Desktop/シューティング/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
 =======
+=======
+    <Compile Include="Assets\script\BackGround.cs" />
+    <Compile Include="Assets\script\BaclGround_DownUp.cs" />
+>>>>>>> enemy
     <Compile Include="Assets\script\BulletMove.cs" />
     <Compile Include="Assets\script\EneBullet.cs" />
     <Compile Include="Assets\script\EnemyMove.cs" />

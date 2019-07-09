@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemy;
-    public List<GameObject> enemyList;
+    [SerializeField] private GameObject Boss;
     private int number;
     private float posY;
     private int count;
+    GameObject _Enemy;
+    GameObject _Boss;
 
     // Start is called before the first frame update
     void Start()
@@ -19,22 +21,30 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(count%630==0)
+        
+        if(count%630==0&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             number = Random.Range(0,enemy.Length);
+            number = 5;
+            
             posY = Random.Range(-5, 5);
             if (number == 1 || number == 6)
             {
-                var _Enemy = Instantiate(enemy[number], transform.position, transform.rotation);
-                enemyList.Add(_Enemy);
-                Debug.Log("敵見つけたからリスト入れとく");
+                _Enemy = Instantiate(enemy[number], transform.position, transform.rotation);
+
+                Destroy(_Enemy, 50.0f);
             }
             else
             {
-                var _Enemy = Instantiate(enemy[number], transform.position + new Vector3(0, posY, 0), transform.rotation);
-                enemyList.Add(_Enemy);
-                Debug.Log("敵見つけたからリスト入れとく");
+                 _Enemy = Instantiate(enemy[number], transform.position + new Vector3(0, posY, 0), transform.rotation);
+
+                Destroy(_Enemy, 50.0f);
             }
+        }
+        if(count>=10000&&!GameObject.FindGameObjectWithTag("Boss"))
+        {
+            _Boss = Instantiate(Boss, transform.position, transform.rotation);
+            Destroy(_Enemy);
         }
 
         count++;
