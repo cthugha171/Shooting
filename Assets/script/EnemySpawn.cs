@@ -25,6 +25,7 @@ public class EnemySpawn : MonoBehaviour
         if(count%630==0&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             number = Random.Range(0,enemy.Length);
+            number = 5;
             
             posY = Random.Range(-5, 5);
             if (number == 1 || number == 6)
