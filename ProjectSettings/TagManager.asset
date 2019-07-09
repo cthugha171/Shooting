@@ -21,12 +21,21 @@ TagManager:
   - 
   - 
   - PostProcessing
+<<<<<<< HEAD
   - Player
   - Bullet
   - Enemy
   - Fannel
   - PlayerDamage
   - EnemyDamage
+=======
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+>>>>>>> enemy
   - 
   - 
   - 
