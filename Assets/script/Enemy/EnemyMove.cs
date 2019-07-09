@@ -24,7 +24,7 @@ public class EnemyMove : MonoBehaviour
 
     public int dataIndext = 1;//ステータスを決める
 
-    Status myData;//ステータスを入れる箱
+   public Status myData;//ステータスを入れる箱
 
 
     // Start is called before the first frame update

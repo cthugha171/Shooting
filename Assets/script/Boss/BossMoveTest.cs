@@ -127,7 +127,7 @@ public class BossMoveTest : MonoBehaviour
     void Move()
     {
         float step = speed * Time.deltaTime;
-        playerpos = GameObject.Find("Player").transform.position;
+        playerpos = GameObject.FindGameObjectWithTag("Player").transform.position;
         MoveVerticle = new Vector3(0, playerpos.y, this.transform.position.z);
         this.transform.position = Vector3.MoveTowards(transform.position, MoveVerticle, step);
     }
@@ -164,7 +164,7 @@ public class BossMoveTest : MonoBehaviour
                 break;
             case 1:
                 //一度だけ位置を取得
-                playerpos = GameObject.Find("Player").transform.position;
+                playerpos = GameObject.FindGameObjectWithTag("Player").transform.position;
                 state = 2;
                 break;
             case 2:

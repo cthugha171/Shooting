@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - DeathPoint
   - Boss
+  - Item
+  - bullets
   layers:
   - Default
   - TransparentFX
@@ -18,12 +20,12 @@ TagManager:
   - 
   - PostProcessing
   - Enemy
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Fannel
+  - bullet
+  - Item
+  - Ebullet
+  - Pbullet
   - 
   - 
   - 

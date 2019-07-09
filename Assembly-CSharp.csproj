@@ -62,18 +62,33 @@
   <ItemGroup>
     <Compile Include="Assets\script\BackGround.cs" />
     <Compile Include="Assets\script\BaclGround_DownUp.cs" />
-    <Compile Include="Assets\script\BornBossEnemy.cs" />
-    <Compile Include="Assets\script\BossEnemyShot.cs" />
-    <Compile Include="Assets\script\BossMoveTest.cs" />
+    <Compile Include="Assets\script\Boss\BornBossEnemy.cs" />
+    <Compile Include="Assets\script\Boss\BossBullet.cs" />
+    <Compile Include="Assets\script\Boss\BossEnemyShot.cs" />
+    <Compile Include="Assets\script\Boss\BossMoveTest.cs" />
     <Compile Include="Assets\script\Bullet.cs" />
-    <Compile Include="Assets\script\BulletMove.cs" />
-    <Compile Include="Assets\script\EneBullet.cs" />
-    <Compile Include="Assets\script\EnemyMove.cs" />
-    <Compile Include="Assets\script\EnemyShot.cs" />
-    <Compile Include="Assets\script\EnemySpawn.cs" />
-    <Compile Include="Assets\script\EnemySpawndata.cs" />
-    <Compile Include="Assets\script\PlayerController.cs" />
+    <Compile Include="Assets\script\Bulletmove.cs" />
+    <Compile Include="Assets\script\Bullets.cs" />
+    <Compile Include="Assets\script\camera\AngleState.cs" />
+    <Compile Include="Assets\script\camera\camerashake.cs" />
+    <Compile Include="Assets\script\camera\GameManager.cs" />
+    <Compile Include="Assets\script\Enemy\EneBullet.cs" />
+    <Compile Include="Assets\script\Enemy\EnemyBulletMove.cs" />
+    <Compile Include="Assets\script\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\script\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\script\Enemy\EnemyShot.cs" />
+    <Compile Include="Assets\script\Enemy\EnemySpawn.cs" />
+    <Compile Include="Assets\script\Enemy\EnemySpawndata.cs" />
+    <Compile Include="Assets\script\Item\GetItem.cs" />
+    <Compile Include="Assets\script\Item\Item.cs" />
+    <Compile Include="Assets\script\Player\Helth.cs" />
+    <Compile Include="Assets\script\Player\PlayerController.cs" />
     <Compile Include="Assets\script\Status.cs" />
+    <Compile Include="Assets\script\tama\BeamShoot.cs" />
+    <Compile Include="Assets\script\tama\FannelRotate.cs" />
+    <Compile Include="Assets\script\tama\FannelShoot.cs" />
+    <Compile Include="Assets\script\tama\HomingLaser.cs" />
+    <Compile Include="Assets\script\tama\SliderTest.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/K018A1498/Desktop/shoting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

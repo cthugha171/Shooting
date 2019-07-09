@@ -25,7 +25,6 @@ public class EnemySpawn : MonoBehaviour
         if(count%630==0&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             number = Random.Range(0,enemy.Length);
-            number = 5;
             
             posY = Random.Range(-5, 5);
             if (number == 1 || number == 6)
@@ -41,7 +40,7 @@ public class EnemySpawn : MonoBehaviour
                 Destroy(_Enemy, 50.0f);
             }
         }
-        if(count>=10&&!GameObject.FindGameObjectWithTag("Boss"))
+        if(count>=1000&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             _Boss = Instantiate(Boss, transform.position, transform.rotation);
             Destroy(_Enemy);
