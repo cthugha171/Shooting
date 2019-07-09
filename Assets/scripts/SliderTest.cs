@@ -35,22 +35,22 @@ public class SliderTest : MonoBehaviour
         //コルーチンの実行
         StockUp();
         ShotBeam();
-        IsShot = Inscr.IsShot; 
+        IsShot = Inscr.IsShot;
     }
 
     private IEnumerator CountChage()
     {
-        while (true)
-        {
-            //一秒おきに永遠に呼ばれる
-            yield return new WaitForSeconds(0.1f);
-            Accumulate();
-        }
+            while (true)
+            {
+                //一秒おきに永遠に呼ばれる
+                yield return new WaitForSeconds(0.1f);
+                Accumulate();
+            }
     }
 
     void Accumulate()
     {
-        slider.value += 0.1f;
+        slider.value += 10f;
     }
 
     void StockUp()
@@ -85,7 +85,5 @@ public class SliderTest : MonoBehaviour
             slider.value -= 30;
         }
         else return;
-
-        Debug.Log(IsShot);
     }
 }

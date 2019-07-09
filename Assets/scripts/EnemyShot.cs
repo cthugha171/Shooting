@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 ﻿using System;
 using System.Collections;
+=======
+﻿using System.Collections;
+>>>>>>> 88b378a37000aab1deab3dc5486a7c3a0374a8f1
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
+<<<<<<< HEAD
     [SerializeField] private int shotSpeed = 5;
     [SerializeField] private EnemyMove move;
     private GameObject player;
@@ -16,10 +21,13 @@ public class EnemyShot : MonoBehaviour
 
 
 
+=======
+>>>>>>> 88b378a37000aab1deab3dc5486a7c3a0374a8f1
 
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
 
         dataNum = move.dataIndext;
         Debug.Log(dataNum);
@@ -147,3 +155,18 @@ public class EnemyShot : MonoBehaviour
 =======
 }
 >>>>>>> 2ac122fa4912b748d01bd61358107337c810aeba:Assets/script/EnemyShot.cs
+=======
+        StartCoroutine("Shot");
+    }
+
+    public IEnumerator Shot()
+    {
+        while (true)
+        {
+            //弾を撃つ処理を書く
+            var ebullet = Instantiate(bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+}
+>>>>>>> 88b378a37000aab1deab3dc5486a7c3a0374a8f1

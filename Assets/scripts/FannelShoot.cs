@@ -5,7 +5,6 @@ using UnityEngine;
 public class FannelShoot : MonoBehaviour
 {
     //入れる
-    [SerializeField] private GameObject bullet = null;
     [SerializeField] private GameObject Homing = null;
 
     public float Timer = 0;
@@ -44,13 +43,10 @@ public class FannelShoot : MonoBehaviour
         {
             //時間を0に戻す
             Timer = defalt;
-            var GObullet = Instantiate(Homing, FirePos, transform.rotation);
-        }
-
-        //スペースで発射
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var GObullet = Instantiate(bullet, FirePos, transform.rotation);
+            for (int i = 0; i < 5; i++)
+            {
+                var GObullet = Instantiate(Homing, FirePos, transform.rotation);
+            }
         }
     }
 }

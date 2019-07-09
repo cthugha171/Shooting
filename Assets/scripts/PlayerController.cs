@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     float MoveHor;
     float MoveVer;
 
+    //無敵点滅用？
+    private Renderer renderer;
+    private BoxCollider colTrigger;
+
 
     private void Start()
     {
@@ -25,6 +29,10 @@ public class PlayerController : MonoBehaviour
         InGMScript = InGMObject.GetComponent<GameManager>();
         //プレイヤーの位置を取得
         playerpos = this.transform.position;
+
+        //無敵点滅用？
+        renderer = GetComponent<Renderer>();
+        colTrigger = GetComponent<BoxCollider>();
     }
     void Update()
     {
@@ -56,6 +64,12 @@ public class PlayerController : MonoBehaviour
                 MoveHor = Input.GetAxisRaw("Horizontal");
                 //縦移動
                 MoveVer = Input.GetAxisRaw("Vertical");
+                //左シフトを押しているときは速度低下
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    MoveHor /= 2;
+                    MoveVer /= 2;
+                }
                 //代入
                 playerpos += new Vector3(0, MoveVer, MoveHor) * speed;
                 break;
@@ -64,11 +78,62 @@ public class PlayerController : MonoBehaviour
                 MoveHor = Input.GetAxisRaw("Horizontal");
                 //縦移動
                 MoveVer = Input.GetAxisRaw("Vertical");
+
+                //左シフトを押しているときは速度低下
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    MoveHor /= 2;
+                    MoveVer /= 2;
+                }
                 //代入
                 playerpos += new Vector3(0, -MoveHor, MoveVer) * speed;
                 break;
             default:
                 break;
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        //Enemyとぶつかったらコルーチンを実行する
+        if (other.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("Damage");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //Enemyとぶつかったらコルーチンを実行する
+        if (other.gameObject.tag == "Enemy")
+        {
+            StartCoroutine("Damage");
+        }
+    }
+
+    IEnumerator Damage()
+    {
+        //無敵時間なので当たり判定を無くす
+        colTrigger.isTrigger = true;
+        //レイヤーをPlayerからPlayerDamageに変更
+        this.gameObject.layer = LayerMask.NameToLayer("PlayerDamage");
+        //Whileループ
+        int count = 10;
+        while (count > 0)
+        {
+            //透明にする
+            renderer.material.color = Color.red;
+            //0.05秒待つ
+            yield return new WaitForSeconds(0.05f);
+            //元に戻す
+            renderer.material.color = Color.white;
+            //0.05秒待つ
+            yield return new WaitForSeconds(0.05f);
+            count--;
+        }
+        //抜けたらレイヤーをPlayerに戻す
+        this.gameObject.layer = LayerMask.NameToLayer("Player");
+        //処理が終わったら復活
+        colTrigger.isTrigger = false;
     }
 }
