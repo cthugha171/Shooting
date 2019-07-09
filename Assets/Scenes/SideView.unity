@@ -364,7 +364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 15.2, y: 0, z: 36}
+  m_LocalPosition: {x: 15.2, y: 0, z: 25.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -708,7 +708,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Boss
       value: 
-      objectReference: {fileID: 595710062973331539, guid: 9632446663070ec46a90b1438286b424,
+      objectReference: {fileID: 7307479842273375438, guid: 5fc0b96e7678359478cac2732b7c001f,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d157690bc9edeed4f873f4b5429f01b3, type: 3}

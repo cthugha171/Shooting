@@ -41,7 +41,7 @@ public class EnemySpawn : MonoBehaviour
                 Destroy(_Enemy, 50.0f);
             }
         }
-        if(count>=10000&&!GameObject.FindGameObjectWithTag("Boss"))
+        if(count>=10&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             _Boss = Instantiate(Boss, transform.position, transform.rotation);
             Destroy(_Enemy);
