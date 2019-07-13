@@ -43,7 +43,7 @@ public class EnemySpawn : MonoBehaviour
         if(count>=1000&&!GameObject.FindGameObjectWithTag("Boss"))
         {
             _Boss = Instantiate(Boss, transform.position, transform.rotation);
-            Destroy(_Enemy);
+            Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         }
 
         count++;

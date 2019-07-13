@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public enum CameraState
 {
@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     Vector3 angle;
 
     int state;
+    int BossCount;
     public int ICsta = 0;
 
     float mian = 0.0f;
@@ -27,13 +28,42 @@ public class GameManager : MonoBehaviour
     {
         //角度は自分で計算しないといけないよ
         angle = MainCamera.transform.localEulerAngles;
-        Cstate = CameraState.Horizontal;//初期は横状態
+        BossCount = 0;
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            Cstate = CameraState.Horizontal;//初期は横状態
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            Cstate = CameraState.Vertical;//初期は横状態
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         RotCamera();
+        switch(BossCount)
+        {
+            case 0:
+                if (GameObject.FindGameObjectWithTag("Boss"))
+                {
+                    BossCount = 1;
+                }
+                break;
+            case 1:
+                if(!GameObject.FindGameObjectWithTag("Boss"))
+                {
+                    BossCount = 2;
+                }
+                break;
+            case 2:
+                {
+                    SceneManager.LoadScene("Rote");
+                }
+                break;
+        }
+
         if (Cstate != CameraState.Vertical)
         {
             ICsta = 0;
@@ -49,7 +79,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     void RotCamera()
     {
-        #region
+        #region 使わない
         //if (Cstate == CameraState.Horizontal && Input.GetMouseButton(1))
         //{
         //    //MainCamera.transform.Rotate(new Vector3(0, 0, -1f));
@@ -93,41 +123,50 @@ public class GameManager : MonoBehaviour
         //}
         #endregion
 
-        
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            state = 0;
+        }
+        else if(SceneManager.GetActiveScene().name=="rote")
+        {
+            state = 1;
+        }
+        else if(SceneManager.GetActiveScene().name=="TopView")
+        {
+            state = 2;
+        }
+
         switch (state)
         {
             case 0:
-                if (Input.GetMouseButtonDown(1))
-                {
-                    if (Cstate == CameraState.Horizontal)
-                    {
-                        state = 1;
-                    }
-                    else state = 2;
-                }
+                Cstate = CameraState.Horizontal;
                 break;
             case 1:
-                Cstate = CameraState.Vertical;
-                angle += new Vector3(0, 0, -1f);
-                MainCamera.transform.localEulerAngles = angle;
-                if (angle.z < -90f)
+                if (Cstate == CameraState.Horizontal)
                 {
-                    angle.z = -90;
-                    MainCamera.transform.eulerAngles = angle;
-                    state = 0;
+                    angle += new Vector3(0, 0, -1f);
+                    MainCamera.transform.localEulerAngles = angle;
+                    if (angle.z < -90f)
+                    {
+                        angle.z = -90;
+                        MainCamera.transform.eulerAngles = angle;
+                        SceneManager.LoadScene("TopView");
+                    }
+                }
+                if (Cstate == CameraState.Vertical)
+                {
+                    angle += new Vector3(0, 0, 1f);
+                    MainCamera.transform.localEulerAngles = angle;
+                    if (angle.z > 0)
+                    {
+                        angle.z = 0;
+                        MainCamera.transform.eulerAngles = angle;
+                        SceneManager.LoadScene("SideView");
+                    }
                 }
                 break;
             case 2:
-                Cstate = CameraState.Horizontal;
-                angle += new Vector3(0, 0, 1f);
-                MainCamera.transform.localEulerAngles = angle;
-                if (angle.z > 0)
-                {
-                    angle.z = 0;
-                    MainCamera.transform.eulerAngles = angle;
-                    Cstate = CameraState.Horizontal;
-                    state = 0;
-                }
+                Cstate = CameraState.Vertical;
                 break;
             default:
                 break;

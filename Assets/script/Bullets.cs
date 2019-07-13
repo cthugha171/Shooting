@@ -51,7 +51,7 @@ public class Bullets : MonoBehaviour
             var enemy = col.GetComponent<EnemyHealth>();
             enemy.Damage(MyStatus.atk);
         }
-        if (col.gameObject.tag == "Benemy")
+        if (col.gameObject.tag == "Boss")
         {
 
             Debug.Log("当たった AA");

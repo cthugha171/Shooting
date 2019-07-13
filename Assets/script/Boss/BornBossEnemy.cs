@@ -17,7 +17,7 @@ public class BornBossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.z < 30.0f)
+        if (this.transform.position.z < 10.0f)
         {
             speed = 0;
             BossMoveScript.enabled = true;//スクリプトをアクティブ

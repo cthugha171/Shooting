@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BackGround: MonoBehaviour
 {
@@ -17,7 +18,15 @@ public class BackGround: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpead, tileSize);
-        transform.position = startPosition + Vector3.forward * newPosition;
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            float newPosition = Mathf.Repeat(Time.time * scrollSpead, tileSize);
+            transform.position = startPosition + Vector3.forward * newPosition;
+        }
+        if(SceneManager.GetActiveScene().name=="TopView")
+        {
+            float newPosition = Mathf.Repeat(Time.time * scrollSpead, tileSize);
+            transform.position = startPosition + Vector3.down * newPosition;
+        }
     }
 }

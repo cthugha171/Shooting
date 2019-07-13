@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Clamp();
-        
     }
 
     /// <summary>

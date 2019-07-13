@@ -61,5 +61,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="DeathPoint")
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+
 }

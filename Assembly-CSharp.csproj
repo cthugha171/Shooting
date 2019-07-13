@@ -65,6 +65,7 @@
     <Compile Include="Assets\script\Boss\BornBossEnemy.cs" />
     <Compile Include="Assets\script\Boss\BossBullet.cs" />
     <Compile Include="Assets\script\Boss\BossEnemyShot.cs" />
+    <Compile Include="Assets\script\Boss\BossHealth.cs" />
     <Compile Include="Assets\script\Boss\BossMoveTest.cs" />
     <Compile Include="Assets\script\Bullet.cs" />
     <Compile Include="Assets\script\Bulletmove.cs" />

@@ -138,7 +138,6 @@ public class EnemyMove : MonoBehaviour
 
     void Cannon()
     {
-        transform.LookAt(player.transform);
         transform.localPosition -= new Vector3(0, 0, speed_Hard*Time.deltaTime);
     }
 }
