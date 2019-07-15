@@ -44,7 +44,10 @@ public class FannelShoot : MonoBehaviour
         {
             //時間を0に戻す
             Timer = defalt;
-            var GObullet = Instantiate(Homing, FirePos, transform.rotation);
+            for (int i = 0; i < 5; i++)
+            {
+                var GObullet = Instantiate(Homing, FirePos, transform.rotation);
+            }
         }
 
         //スペースで発射

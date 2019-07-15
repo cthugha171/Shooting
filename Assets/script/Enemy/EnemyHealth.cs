@@ -38,18 +38,18 @@ public class EnemyHealth : MonoBehaviour
         
         if (status.isDead)
         {
+            Debug.Log("死んだ");
+            if (stateNum == 5)
+            {
+                Debug.Log("アイテムを落とした");
+                Instantiate(Item);
+            }
             Destroy();
         }
     }
 
     public void Destroy()
     {
-        Debug.Log("死んだ");
-        if (stateNum == 5)
-        {
-            Debug.Log("アイテムを落とした");
-            Instantiate(Item);
-        }
         Destroy(gameObject);
     } 
 

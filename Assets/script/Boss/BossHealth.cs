@@ -25,6 +25,6 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("当たった");
         Destroy(gameObject);
-        SceneManager.LoadScene("SideView");
+        SceneManager.LoadScene("Ending");
     }
 }

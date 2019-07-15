@@ -1286,6 +1286,21 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 75013596328989994, guid: 5f451e8fe4f749f479b97317020e4631,
+        type: 3}
+      propertyPath: interbal
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 75013596328989994, guid: 5f451e8fe4f749f479b97317020e4631,
+        type: 3}
+      propertyPath: Homing
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 75013596500052072, guid: 5f451e8fe4f749f479b97317020e4631,
+        type: 3}
+      propertyPath: interbal
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f451e8fe4f749f479b97317020e4631, type: 3}
 --- !u!1001 &7476416064582980605
@@ -1360,6 +1375,12 @@ PrefabInstance:
       propertyPath: Boss
       value: 
       objectReference: {fileID: 7307479842273375438, guid: 5fc0b96e7678359478cac2732b7c001f,
+        type: 3}
+    - target: {fileID: 7476416066318261352, guid: d157690bc9edeed4f873f4b5429f01b3,
+        type: 3}
+      propertyPath: enemy.Array.data[5]
+      value: 
+      objectReference: {fileID: 7368919728820394897, guid: 7c2f6a1049e44cf4a89b069b81c452e6,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d157690bc9edeed4f873f4b5429f01b3, type: 3}
