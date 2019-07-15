@@ -18,15 +18,14 @@ public class BeamShoot : MonoBehaviour
     int state;
     //スライダー取得
     GameObject InObj;
-    GameObject ene;
     SliderTest Inscr;
 
     private GameObject Bom;
-    public GameObject coldata;
+    public GameObject coldata;//当たり判定用オブジェクト
     // GameObject enemy;
     //ビームのストック数格納用変数
     int Stock;
-    public string targetTag;
+    private string targetTag;
     [SerializeField] private Status status;
     public Status MyStatus
     {
@@ -36,7 +35,6 @@ public class BeamShoot : MonoBehaviour
 
     private void Awake()
     {
-        ene = GameObject.FindGameObjectWithTag("Enemy");
         Debug.Log("----------------------------------------------------------");
         //Debug.Log(ene.name);
         beamParticle = GetComponent<ParticleSystem>();
@@ -58,7 +56,6 @@ public class BeamShoot : MonoBehaviour
     void Update()
     {
         ShotManage();
-        Destroy(ene);
         //常に値をチェック
         Stock = Inscr.Stock;
 
@@ -95,6 +92,10 @@ public class BeamShoot : MonoBehaviour
                     Bom.SetActive(true);
                     RaycastHit[] hitInfo;
                     hitInfo = Physics.BoxCastAll(coldata.transform.position, coldata.GetComponent<BoxCollider>().size * 0.5f, transform.forward, Quaternion.identity, LayerMask.GetMask("Enemy"));
+                    for(int i=0;i<hitInfo.Length;i++)
+                    {
+                        Debug.Log(hitInfo[i]);
+                    }
                     foreach (RaycastHit hit in hitInfo)
                     {
                         if (hit.transform.gameObject.CompareTag("Enemy")) 
@@ -160,15 +161,4 @@ public class BeamShoot : MonoBehaviour
     //    }
 
     //}
-
-    private void OnWillRenderObject()
-    {
-        if (Camera.current.name != "SceneCamera")
-        {
-            if (IsShot == true)
-            {
-                Destroy(ene);
-            }
-        }
-    }
 }

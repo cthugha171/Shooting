@@ -82,7 +82,7 @@
     <Compile Include="Assets\script\Enemy\EnemySpawndata.cs" />
     <Compile Include="Assets\script\Item\GetItem.cs" />
     <Compile Include="Assets\script\Item\Item.cs" />
-    <Compile Include="Assets\script\Player\Helth.cs" />
+    <Compile Include="Assets\script\Player\Health.cs" />
     <Compile Include="Assets\script\Player\PlayerController.cs" />
     <Compile Include="Assets\script\Status.cs" />
     <Compile Include="Assets\script\tama\BeamShoot.cs" />
@@ -90,6 +90,7 @@
     <Compile Include="Assets\script\tama\FannelShoot.cs" />
     <Compile Include="Assets\script\tama\HomingLaser.cs" />
     <Compile Include="Assets\script\tama\SliderTest.cs" />
+    <Compile Include="Assets\注意事項.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/K018A1498/Desktop/shoting/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

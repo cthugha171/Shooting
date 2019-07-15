@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7737514b19e5da148b357e159047037b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: {fileID: 0}
+  bullets: {fileID: 7488685473555260196, guid: 23794313780c70a40951c9b4038da671, type: 3}
   timeOut: 0
   timeElapsed: 0
 --- !u!114 &5541251303220187573

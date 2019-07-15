@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -54,27 +55,23 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Move()
     {
-        int State = InGMScript.ICsta;
-        switch (State)
-        {
-            case 0://縦画面の時の移動
-                //横移動
-                MoveHor = Input.GetAxisRaw("Horizontal");
-                //縦移動
-                MoveVer = Input.GetAxisRaw("Vertical");
-                //代入
-                playerpos += new Vector3(0, MoveVer, MoveHor) * speed;
-                break;
-            case 1://横画面の時の移動
-                //横移動
-                MoveHor = Input.GetAxisRaw("Horizontal");
-                //縦移動
-                MoveVer = Input.GetAxisRaw("Vertical");
-                //代入
-                playerpos += new Vector3(0, -MoveHor, MoveVer) * speed;
-                break;
-            default:
-                break;
-        }
+        //    if (SceneManager.GetActiveScene().name == "SideView")
+        //    {
+        //横移動
+        MoveHor = Input.GetAxisRaw("Horizontal");
+            //縦移動
+            MoveVer = Input.GetAxisRaw("Vertical");
+            //代入
+            playerpos += new Vector3(0, MoveVer, MoveHor) * speed;
+        //}
+        //else if (SceneManager.GetActiveScene().name == "TopView")
+        //{
+        //    //横移動
+        //    MoveHor = Input.GetAxisRaw("Horizontal");
+        //    //縦移動
+        //    MoveVer = Input.GetAxisRaw("Vertical");
+        //    //代入
+        //    playerpos += new Vector3(0, -MoveHor, MoveVer) * speed;
+        //}
     }
 }

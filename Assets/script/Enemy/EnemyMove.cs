@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -42,12 +43,15 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        EnemyState();
+    }
 
+    void EnemyState()
+    {
         //エネミーのステータスごとに行動を変える
         switch (dataIndext)
         {
-            case 0 :
+            case 0:
                 Rash();//突進
                 break;
             case 1:
@@ -89,26 +93,60 @@ public class EnemyMove : MonoBehaviour
 
     void Rash()
     {
-        transform.localPosition -= new Vector3(0, 0, speed_Rash*Time.deltaTime);
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            transform.position -= new Vector3(0, 0, speed_Rash * Time.deltaTime);
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            transform.position -= new Vector3(0, speed_Rash * Time.deltaTime, 0);
+        }
     }
 
     void Shootable()
     {
         this.transform.LookAt(player.transform);
-        if(this.transform.position.x>=player.transform.position.x)
+
+        if (SceneManager.GetActiveScene().name == "SideView")
         {
-            transform.localPosition -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
+            if (this.transform.position.x >= player.transform.position.x)
+            {
+                transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
+            }
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            if (this.transform.position.x >= player.transform.position.x)
+            {
+                transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
+            }
         }
     }
 
     void Hard()
     {
-        transform.localPosition -= new Vector3(0, 0, speed_Hard*Time.deltaTime);
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
+        }
+        
     }
 
     void HiSpeed()
     {
-        transform.localPosition -= new Vector3(0, 0, speed_Hispeed*Time.deltaTime);
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            transform.position -= new Vector3(0, 0, speed_Hispeed * Time.deltaTime);
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            transform.position -= new Vector3(0, speed_Hispeed * Time.deltaTime, 0);
+        }
+        
     }
 
     void Stalker()
@@ -126,18 +164,39 @@ public class EnemyMove : MonoBehaviour
 
     void Dropper()
     {
-        if (count <= 0)
+       
+        if (SceneManager.GetActiveScene().name == "SideView")
         {
-            mov.y = Random.Range(-8, 10);
-            mov.z = Random.Range(-2, 0);
-            count = 10;
+            if (count <= 0)
+            {
+                mov.y = Random.Range(-8, 10);
+                mov.z = Random.Range(-2, 0);
+                count = 10;
+            }
         }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            if (count <= 0)
+            {
+                mov.y = Random.Range(-2, 0);
+                mov.z = Random.Range(-8, 10);
+                count = 10;
+            }
+        }
+       
         count--;
         transform.localPosition += new Vector3(mov.x, Mathf.Clamp(mov.y, -clampY, clampY), mov.z) * Time.deltaTime;
     }
 
     void Cannon()
     {
-        transform.localPosition -= new Vector3(0, 0, speed_Hard*Time.deltaTime);
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
+        }
     }
 }

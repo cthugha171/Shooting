@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossMoveTest : MonoBehaviour
 {
@@ -126,10 +127,20 @@ public class BossMoveTest : MonoBehaviour
     //ボスの基本の移動
     void Move()
     {
-        float step = speed * Time.deltaTime;
-        playerpos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        MoveVerticle = new Vector3(0, playerpos.y, this.transform.position.z);
-        this.transform.position = Vector3.MoveTowards(transform.position, MoveVerticle, step);
+            float step = speed * Time.deltaTime;
+            playerpos = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        if (SceneManager.GetActiveScene().name == "SideView")
+        {
+            MoveVerticle = new Vector3(0, playerpos.y, this.transform.position.z);
+            this.transform.position = Vector3.MoveTowards(transform.position, MoveVerticle, step);
+        }
+        else if (SceneManager.GetActiveScene().name == "TopView")
+        {
+            MoveVerticle = new Vector3(0, this.transform.position.y, playerpos.z);
+            this.transform.position = Vector3.MoveTowards(transform.position, MoveVerticle, step);
+        }
+       
     }
     //ボスの弾発射開始
     void OnBossShot()

@@ -7,15 +7,18 @@ public class EnemyHealth : MonoBehaviour
 {
 
     [SerializeField] private EnemyMove move;
+    [SerializeField] private GameObject Item;
     private Status status;
-    //[SerializeField] private tukkomi Tukkomi;
-   // Tenmetu tenmetu;
-   
-    
+    private int stateNum;//enemyの種類判別用
+                         //[SerializeField] private tukkomi Tukkomi;
+                         // Tenmetu tenmetu;
+
+
     // Start is called before the first frame update
     void Start()
     {
         status = move.myData;
+        stateNum = move.dataIndext;
     }
 
     public void Damage(Status other)
@@ -27,13 +30,13 @@ public class EnemyHealth : MonoBehaviour
     public void Damage(int atk)
     {
         status = status.Damage(atk);
-        
+
         //int damage = atk -status.def;
         //status.hp -= damage;
-        //if (status.hp <= 0) status.isdead = true;
+        //if (status.hp <= 0) status.isDead = true;
 
-        Debug.Log("Atk = " + atk + " " + "life = " + status.hp);
-        if(status.isDead)
+        
+        if (status.isDead)
         {
             Destroy();
         }
@@ -41,11 +44,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void Destroy()
     {
-      
-            Debug.Log("当たった");
-            Destroy(gameObject);
-        SceneManager.LoadScene("SideView");
-       
+        Debug.Log("死んだ");
+        if (stateNum == 5)
+        {
+            Debug.Log("アイテムを落とした");
+            Instantiate(Item);
+        }
+        Destroy(gameObject);
     } 
 
     // Update is called once per frame

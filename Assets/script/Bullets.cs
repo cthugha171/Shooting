@@ -9,7 +9,7 @@ public class Bullets : MonoBehaviour
     [SerializeField] private Status status;
     [SerializeField] private UnityEvent onTrigger = null; 
     private GameObject player;
-    private Helth helth;
+    private Health health;
     // Start is called before the first frame update
 
     public Status MyStatus
@@ -20,7 +20,7 @@ public class Bullets : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        helth = player.GetComponent<Helth>();
+        health = player.GetComponent<Health>();
         
    }
     public void Damage(Status other)
@@ -79,7 +79,7 @@ public class Bullets : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             //var player = collision.GetComponent<Helth>();
-            helth.Damage(MyStatus.atk);
+            health.Damage(MyStatus.atk);
         }
         if(collision.gameObject.tag =="Ebullet")
         {
