@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 549217354124405120, guid: 5442d518168580b49a46119002200957,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 549217354124405120, guid: 5442d518168580b49a46119002200957,
         type: 3}
@@ -489,6 +489,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4245908185978595007, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4245908185978595007, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 549217354124405122, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa34323b8b829734ba9c958eead2e5aa, type: 2}
     - target: {fileID: 549217354124405123, guid: 5442d518168580b49a46119002200957,
         type: 3}
       propertyPath: beamParticle
@@ -504,6 +519,26 @@ PrefabInstance:
       propertyPath: coldata
       value: 
       objectReference: {fileID: 9190692684266151389}
+    - target: {fileID: 5686218184336146267, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110371824075872553, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110371824075872553, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110371824075872553, guid: 5442d518168580b49a46119002200957,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 13
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5442d518168580b49a46119002200957, type: 3}
 --- !u!4 &3962412602018974470 stripped

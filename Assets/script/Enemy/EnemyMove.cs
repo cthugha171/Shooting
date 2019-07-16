@@ -11,7 +11,6 @@ public class EnemyMove : MonoBehaviour
     [SerializeField] private float speed_Stalker = 2;
     [SerializeField] private float leaveplayer = 50;
     [SerializeField] private EnemySpawndata data;
-    [SerializeField] private GameObject player;
     private Transform plPos;
     private Vector3 mov;
     private Vector3 enemyposint;
@@ -43,6 +42,7 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        plPos = GameObject.FindGameObjectWithTag("Player").transform;
         EnemyState();
     }
 
@@ -85,7 +85,7 @@ public class EnemyMove : MonoBehaviour
             Debug.Log("ENemy Move Start " + speed);
             //yield return new WaitForEndOfFrame();
             yield return null;
-            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, player.transform.position, speed);
+            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, plPos.position, speed);
             Debug.Log("EnemyMove");
         }
         Debug.Log("完了");
@@ -105,18 +105,18 @@ public class EnemyMove : MonoBehaviour
 
     void Shootable()
     {
-        this.transform.LookAt(player.transform);
+        this.transform.LookAt(plPos);
 
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            if (this.transform.position.x >= player.transform.position.x)
+            if (this.transform.position.x >= plPos.position.x)
             {
                 transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
             }
         }
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
-            if (this.transform.position.x >= player.transform.position.x)
+            if (this.transform.position.x >= plPos.position.x)
             {
                 transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
             }
@@ -151,9 +151,9 @@ public class EnemyMove : MonoBehaviour
 
     void Stalker()
     {
-        x_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.x);
-        y_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - player.transform.localPosition.y);
-        z_abs = Mathf.Abs(this.gameObject.transform.localPosition.z - player.transform.localPosition.z);
+        x_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - plPos.localPosition.x);
+        y_abs = Mathf.Abs(this.gameObject.transform.localPosition.x - plPos.localPosition.y);
+        z_abs = Mathf.Abs(this.gameObject.transform.localPosition.z - plPos.localPosition.z);
 
 
         if (coroutine==null)
@@ -190,6 +190,7 @@ public class EnemyMove : MonoBehaviour
 
     void Cannon()
     {
+        this.transform.LookAt(plPos);
         if (SceneManager.GetActiveScene().name == "SideView")
         {
             transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
