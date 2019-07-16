@@ -20,4 +20,18 @@ public class SceneChanger : MonoBehaviour
             SceneManager.LoadScene(SceneName);
         }
     }
+
+    public void ButtonClicked(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void EndGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }

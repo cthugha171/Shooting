@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7459749929116756373}
   - component: {fileID: 8531212423167661191}
   - component: {fileID: 4356155809144290237}
+  - component: {fileID: 5503314322455059488}
   m_Layer: 0
   m_Name: E_bulletTest
   m_TagString: Untagged
@@ -105,3 +106,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -0.5
+--- !u!114 &5503314322455059488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5306569587606682520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3af67d43be16b4186de4d3c2010668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  status:
+    name: 
+    atk: 1
+    Tatk: 0
+    hp: 0
+    def: 0
+    isDead: 0
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null

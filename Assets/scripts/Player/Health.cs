@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private Status status;
-    
+    public Slider slider;
+    public Image damageImage;
     //public const int  maxHealth = 10;
     //public int currentHealth = maxHealth;
 
@@ -17,9 +19,14 @@ public class Health : MonoBehaviour
 
     public void Damage(int atk)
     {
-        
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            status.hp -= 10;
+            Debug.Log("ダメージを受けた");
+        }
         status.Damage(atk);
-        if(status.isDead)
+        slider.value = status.hp;
+        if (status.isDead)
         {
             Destroy();
             
@@ -30,7 +37,6 @@ public class Health : MonoBehaviour
     {
         Debug.Log("当たった");
         Destroy(gameObject);
-        SceneManager.LoadScene("SideView");
         SceneManager.LoadScene("BadEnding");
     }
 

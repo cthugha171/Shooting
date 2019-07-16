@@ -164,17 +164,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1231243442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d30eec49a6682ee4fbe6c1ba5b534a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b9f60c99b30ffb4f88aa09112cc75f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed_Rash: 5
   speed_Hard: 1
   speed_Hispeed: 10
   speed_Stalker: 2
-  leaveplayer: 10
+  leaveplayer: 50
   data: {fileID: 11400000, guid: f5aeca767c5e6f944ace6e24232e3d83, type: 2}
-  player: {fileID: 0}
-  clampY: 5
+  player: {fileID: 1589203934501006, guid: 05d8adff78ace1446a04008d1d27ad10, type: 3}
+  clampY: 0
   dataIndext: 5
   myData:
     name: 

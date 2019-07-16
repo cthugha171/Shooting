@@ -171,12 +171,10 @@ public class EnemyShot : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            playerPos = GameObject.Find("Player").transform.position;
             playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
             transform.LookAt(playerPos);
             if (makeBullet % 60 == 0)
             {
-                _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
                 _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);

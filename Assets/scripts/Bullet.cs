@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
    // [SerializeField] private GameObject homing;
     [SerializeField] public float timeOut;
     [SerializeField] public float timeElapsed;
+    public AudioClip se;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +20,11 @@ public class Bullet : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
+            AudioSource.PlayClipAtPoint(se, transform.position);
             timeElapsed += Time.deltaTime;
             if(timeElapsed >= timeOut)
             {
                 timeElapsed = 0.0f;
-            var _bullet = Instantiate(bullets,
             var _bullet = Instantiate(bullets,transform.localPosition, transform.localRotation);
             Destroy(_bullet,30);
             }

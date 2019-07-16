@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 549217354124405125}
   - component: {fileID: 549217354124405122}
   - component: {fileID: 549217354124405123}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Particle Beam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -109,7 +109,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -3502,7 +3502,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 0
@@ -4656,7 +4656,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: b8793b9b10f051649a5e2121c2d19338, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4709,7 +4709,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 549217354124405121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c3192b985f970249bdf35da15775c19, type: 3}
+  m_Script: {fileID: 11500000, guid: 5097c510ef014eb41a5d1ab260892933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   beamParticle: {fileID: 549217354124405125}
@@ -4717,7 +4717,6 @@ MonoBehaviour:
   BeamTimer: 5
   IsShot: 0
   coldata: {fileID: 0}
-  targetTag: 
   status:
     name: 
     atk: 0
@@ -4735,7 +4734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4245908185978595007}
   - component: {fileID: 6110371824075872553}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4749,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5686218184336146267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -4, z: 460}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 549217354124405120}
@@ -4767,5 +4766,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: -14.06, z: -13.04}
+  m_Size: {x: 200, y: 1000, z: 1500}
   m_Center: {x: 0, y: 0, z: 0}

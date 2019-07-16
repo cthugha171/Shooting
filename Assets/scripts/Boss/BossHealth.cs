@@ -26,10 +26,9 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("当たった");
         Destroy(gameObject);
-<<<<<<< HEAD:Assets/scripts/Boss/BossHealth.cs
-        SceneManager.LoadScene("Ending");
-=======
+
+      
         SceneManager.LoadScene("GoodEnding");
->>>>>>> origin/I_bug:Assets/script/Boss/BossHealth.cs
+
     }
 }

@@ -28,6 +28,19 @@ public class BossMoveTest : MonoBehaviour
     //ボスのパーティクル
     private ParticleSystem[] particles;
 
+    private Health health;
+
+   [SerializeField] private Status bossHealth;
+
+    private GameObject player;
+
+    public int count;
+
+    public Status MyStatus
+    {
+        get { return bossHealth; }
+    }
+
     #region 突撃に使った変数たち
 
     //突撃前の位置
@@ -73,6 +86,14 @@ public class BossMoveTest : MonoBehaviour
         //突撃タイマーの初期化
         InitTimer = timer;
     }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        health = player.GetComponent<Health>();
+    }
+
+   
 
     // Update is called once per frame
     void Update()
@@ -306,6 +327,37 @@ public class BossMoveTest : MonoBehaviour
     //現在の状態を終了するときに一回呼ばれる
     void OnStateExit(BossState state)
     {
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if (col.gameObject.tag == "Enemy")
+        //{
+
+        //    Debug.Log("当たった AA");
+        //    var enemy = col.GetComponent<EnemyHealth>();
+        //    enemy.Damage(MyStatus.atk);
+        //}
+        if (collision.gameObject.tag == "Player")
+        {
+            //var player = collision.GetComponent<Helth>();
+            health.Damage(MyStatus.atk);
+        }
+        //Destroy(gameObject);
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            if (count >= 60)
+            {
+                //var player = collision.GetComponent<Helth>();
+                health.Damage(MyStatus.Tatk);
+                count = 0;
+            }
+            count++;
+        }
 
     }
     //いつか使うであろうボスの点滅

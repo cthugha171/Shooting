@@ -4,18 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-<<<<<<< HEAD
   - Item
-=======
+  - Enemy
+  - bullets
   - DeathPoint
   - Boss
-<<<<<<< HEAD
->>>>>>> enemy
-=======
-  - Item
-  - bullets
->>>>>>> enemy
   layers:
   - Default
   - TransparentFX
@@ -25,32 +18,14 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-<<<<<<< HEAD
-  - Player
-  - Bullet
-  - Enemy
   - Fannel
-  - PlayerDamage
-  - EnemyDamage
-=======
-  - Enemy
-<<<<<<< HEAD
-  - 
-  - 
-  - 
-  - 
-  - 
->>>>>>> enemy
-  - 
-=======
   - Player
-  - Fannel
+  - Enemy
   - bullet
   - Item
-  - Ebullet
   - Pbullet
->>>>>>> enemy
+  - Ebullet
+  - PostPrcessing
   - 
   - 
   - 

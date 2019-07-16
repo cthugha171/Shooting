@@ -5,13 +5,15 @@ using UnityEngine;
 public class FannelShoot : MonoBehaviour
 {
     //入れる
-    [SerializeField] private GameObject bullet = null;
     [SerializeField] private GameObject Homing = null;
+    [SerializeField] private GameObject Beam;
+    [SerializeField] private GameObject Normal;
 
     public float Timer = 0;
     private float defalt = 0;
     public float interbal = 1;
-    public float interbal = 2;
+
+    public int Shotstate;
 
     //回転の中心を取るために使う
     private GameObject targetPos;
@@ -43,22 +45,31 @@ public class FannelShoot : MonoBehaviour
         Timer += Time.deltaTime;
         if (Timer > interbal)
         {
-            //時間を0に戻す
-            Timer = defalt;
-<<<<<<< HEAD:Assets/scripts/tama/FannelShoot.cs
-            for (int i = 0; i < 5; i++)
-=======
-            for(int i = 0; i < 5; i++)
->>>>>>> origin/I_bug:Assets/script/tama/FannelShoot.cs
+            switch (Shotstate)
             {
-                var GObullet = Instantiate(Homing, FirePos, transform.rotation);
+                case 0:
+                    //時間を0に戻す
+                    Timer = defalt;
+                    for (int i = 0; i < 5; i++)
+                    {
+                        var Hbullet = Instantiate(Homing, FirePos, transform.rotation);
+                    }
+                    break;
+                case 1:
+                    //時間を0に戻す
+                    Timer = defalt;
+                    var Bbullet = Instantiate(Beam, FirePos, new Quaternion());
+                    Destroy(Bbullet, 0.5f);
+                    break;
+                case 2:
+                    //時間を0に戻す
+                    Timer = defalt;
+                    var Nbullet = Instantiate(Normal, FirePos, new Quaternion());
+                    Destroy(Nbullet, 3.0f);
+                    break;
+                default:
+                    break;
             }
-        }
-
-        //スペースで発射
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            var GObullet = Instantiate(bullet, FirePos, transform.rotation);
         }
     }
 }

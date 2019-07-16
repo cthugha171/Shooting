@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 760477053}
   - component: {fileID: 760477054}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,8 @@ GameObject:
   - component: {fileID: 1711099948}
   - component: {fileID: 1711099947}
   - component: {fileID: 1711099946}
-  m_Layer: 9
+  - component: {fileID: 5591381711449621116}
+  m_Layer: 10
   m_Name: "\u901F\u3044"
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,7 +77,7 @@ Transform:
   m_GameObject: {fileID: 1711099945}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1.27, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 760477053}
   m_Father: {fileID: 0}
@@ -89,7 +90,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711099945}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300004, guid: c3a24bfc985927949bfbdf9a28743427, type: 3}
 --- !u!23 &1711099949
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107,7 +108,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b1e0a812308978a46b525f530f4e72a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,16 +150,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1711099945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d30eec49a6682ee4fbe6c1ba5b534a14, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b9f60c99b30ffb4f88aa09112cc75f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed_Rash: 5
   speed_Hard: 1
   speed_Hispeed: 10
   speed_Stalker: 2
-  leaveplayer: 10
+  leaveplayer: 50
   data: {fileID: 11400000, guid: f5aeca767c5e6f944ace6e24232e3d83, type: 2}
-  player: {fileID: 2262500471937358725, guid: 5f451e8fe4f749f479b97317020e4631, type: 3}
   clampY: 0
   dataIndext: 3
   myData:
@@ -184,3 +184,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
+--- !u!114 &5591381711449621116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711099945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 539fcd4ba9305c5459f971d9169dac75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 1711099947}
+  Item: {fileID: 0}
+  se: {fileID: 8300000, guid: cdf4c66e40a2de842b23806f4e65c6fc, type: 3}

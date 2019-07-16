@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     private int stateNum;//enemyの種類判別用
                          //[SerializeField] private tukkomi Tukkomi;
                          // Tenmetu tenmetu;
+    public AudioClip se;
 
 
     // Start is called before the first frame update
@@ -39,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
         if (status.isDead)
         {
             Debug.Log("死んだ");
+            AudioSource.PlayClipAtPoint(se, transform.position);
             if (stateNum == 5)
             {
                 Debug.Log("アイテムを落とした");

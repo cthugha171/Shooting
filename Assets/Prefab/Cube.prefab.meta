@@ -1,16 +1,6 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/scripts.meta
-<<<<<<< HEAD
-guid: 43976deb8258c5840b6cbd574c301917
-=======
-guid: 376f1de823438e447b428035b484500c
->>>>>>> enemy
-folderAsset: yes
-DefaultImporter:
-=======
-guid: 9632446663070ec46a90b1438286b424
+guid: b1d3d07922a5c6e4ebc8f378df17a794
 PrefabImporter:
->>>>>>> enemy:Assets/Cube.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

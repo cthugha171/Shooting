@@ -107,7 +107,7 @@ public class BeamShoot : MonoBehaviour
                         if(hit.transform.gameObject.CompareTag("Boss"))
                         {
                             Debug.Log("当たった Boss");
-                            var enemy = hit.transform.gameObject.GetComponent<EnemyHealth>();
+                            var enemy = hit.transform.gameObject.GetComponent<BossHealth>();
                             enemy.Damage(MyStatus.atk);
                         }
                     }
