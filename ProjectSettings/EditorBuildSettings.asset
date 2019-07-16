@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TopView.unity
     guid: f8ac47ce7e9946b498e2ef787dd6039c
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 792dd8d1c40ee0b439eb6e15e83ed14c
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 7b4eb8cdd1bd7b8478f11dff24e35220
   m_configObjects: {}

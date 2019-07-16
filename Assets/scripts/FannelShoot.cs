@@ -6,6 +6,7 @@ public class FannelShoot : MonoBehaviour
 {
     //入れる
     [SerializeField] private GameObject Homing = null;
+    [SerializeField] private GameObject Normal;
 
     public float Timer = 0;
     private float defalt = 0;
@@ -47,6 +48,13 @@ public class FannelShoot : MonoBehaviour
             {
                 var GObullet = Instantiate(Homing, FirePos, transform.rotation);
             }
+        }
+
+        //ビームを撃つよ
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            var GObullet = Instantiate(Normal, FirePos, new Quaternion());
+            Destroy(GObullet, 0.5f);
         }
     }
 }

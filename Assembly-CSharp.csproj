@@ -60,9 +60,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BornBossEnemy.cs" />
+    <Compile Include="Assets\KeyButtonTest\ActiveButton.cs" />
+    <Compile Include="Assets\KeyButtonTest\ChangeSelect.cs" />
+    <Compile Include="Assets\KeyButtonTest\NextorBackPanel.cs" />
     <Compile Include="Assets\scripts\AddScore.cs" />
     <Compile Include="Assets\scripts\BeamShoot.cs" />
+    <Compile Include="Assets\scripts\BornBossEnemy.cs" />
     <Compile Include="Assets\scripts\BossMoveTest.cs" />
     <Compile Include="Assets\scripts\Bullet.cs" />
     <Compile Include="Assets\scripts\camerashake.cs" />
@@ -77,6 +80,13 @@
     <Compile Include="Assets\scripts\SceneChanger.cs" />
     <Compile Include="Assets\scripts\SliderTest.cs" />
     <Compile Include="Assets\scripts\totugekitest.cs" />
+    <Compile Include="Assets\TrueBoss\BossFannelMove.cs" />
+    <Compile Include="Assets\TrueBoss\BossFannelShot.cs" />
+    <Compile Include="Assets\TrueBoss\FallRain.cs" />
+    <Compile Include="Assets\TrueBoss\HomingTest.cs" />
+    <Compile Include="Assets\TrueBoss\Rain.cs" />
+    <Compile Include="Assets\TrueBoss\RainAttack.cs" />
+    <Compile Include="Assets\TrueBoss\TrueBossMove.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/KPC-018A1434/Desktop/シューティング/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
