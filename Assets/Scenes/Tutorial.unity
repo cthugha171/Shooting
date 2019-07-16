@@ -980,8 +980,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7798cc60e99ce184980c346aae6fa10d, type: 3}
-        m_MethodName: 
+      - m_Target: {fileID: 1550636435975149938, guid: a9c53b37ab0104443bb895d4aa8cc1b1,
+          type: 3}
+        m_MethodName: ButtonClicked
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
