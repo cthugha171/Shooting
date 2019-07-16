@@ -14,6 +14,7 @@ public class GetItem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        state = 0;
         //受け取り
         fannel1 = transform.GetChild(0).gameObject;
         fannel2 = transform.GetChild(1).gameObject;
@@ -24,6 +25,7 @@ public class GetItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("アイテムを取得   アイテム番号:"+state);
         if (other.gameObject.tag == "Item")
         {
             if (state == 0)

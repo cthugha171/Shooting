@@ -11,6 +11,7 @@ public class FannelShoot : MonoBehaviour
     public float Timer = 0;
     private float defalt = 0;
     public float interbal = 1;
+    public float interbal = 2;
 
     //回転の中心を取るために使う
     private GameObject targetPos;
@@ -44,7 +45,11 @@ public class FannelShoot : MonoBehaviour
         {
             //時間を0に戻す
             Timer = defalt;
+<<<<<<< HEAD:Assets/scripts/tama/FannelShoot.cs
             for (int i = 0; i < 5; i++)
+=======
+            for(int i = 0; i < 5; i++)
+>>>>>>> origin/I_bug:Assets/script/tama/FannelShoot.cs
             {
                 var GObullet = Instantiate(Homing, FirePos, transform.rotation);
             }
