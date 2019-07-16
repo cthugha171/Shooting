@@ -30,7 +30,7 @@ public class Health : MonoBehaviour
     {
         Debug.Log("当たった");
         Destroy(gameObject);
-        SceneManager.LoadScene("SideView");
+        SceneManager.LoadScene("BadEnding");
     }
 
     //public void TakeDamage(int amount)

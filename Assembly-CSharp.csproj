@@ -60,15 +60,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\KeyButtonTest\ActiveButton.cs" />
+    <Compile Include="Assets\KeyButtonTest\ChangeSelect.cs" />
+    <Compile Include="Assets\KeyButtonTest\NextorBackPanel.cs" />
     <Compile Include="Assets\script\BackGround.cs" />
     <Compile Include="Assets\script\BaclGround_DownUp.cs" />
+    <Compile Include="Assets\script\BGMandSE.cs" />
     <Compile Include="Assets\script\Boss\BornBossEnemy.cs" />
     <Compile Include="Assets\script\Boss\BossBullet.cs" />
     <Compile Include="Assets\script\Boss\BossEnemyShot.cs" />
     <Compile Include="Assets\script\Boss\BossHealth.cs" />
     <Compile Include="Assets\script\Boss\BossMoveTest.cs" />
     <Compile Include="Assets\script\Bullet.cs" />
-    <Compile Include="Assets\script\Bulletmove.cs" />
+    <Compile Include="Assets\script\BulletMove.cs" />
     <Compile Include="Assets\script\Bullets.cs" />
     <Compile Include="Assets\script\camera\AngleState.cs" />
     <Compile Include="Assets\script\camera\camerashake.cs" />
@@ -84,6 +88,8 @@
     <Compile Include="Assets\script\Item\Item.cs" />
     <Compile Include="Assets\script\Player\Health.cs" />
     <Compile Include="Assets\script\Player\PlayerController.cs" />
+    <Compile Include="Assets\script\SceneChanger.cs" />
+    <Compile Include="Assets\script\SoundBoxMove.cs" />
     <Compile Include="Assets\script\Status.cs" />
     <Compile Include="Assets\script\tama\BeamShoot.cs" />
     <Compile Include="Assets\script\tama\FannelRotate.cs" />

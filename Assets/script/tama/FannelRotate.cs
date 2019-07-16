@@ -21,7 +21,7 @@ public class FannelRotate : MonoBehaviour
     void RotFannel()
     {
         //プレイヤーのトランスフォームを取得
-        GameObject target = GameObject.Find("Player");
+        GameObject target = GameObject.FindGameObjectWithTag("Player");
         targetPos = target;
         transform.RotateAround(targetPos.transform.position, new Vector3(1, 0, 0), angle * Time.deltaTime);
 

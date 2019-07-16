@@ -14,6 +14,7 @@ public class BossHealth : MonoBehaviour
     public void Damage(int atk)
     {
         state.Damage(atk);
+        Debug.Log("ボスの残り体力:" + state.hp);
         if (state.isDead)
         {
             Destroy();
@@ -25,6 +26,6 @@ public class BossHealth : MonoBehaviour
     {
         Debug.Log("当たった");
         Destroy(gameObject);
-        SceneManager.LoadScene("SideView");
+        SceneManager.LoadScene("GoodEnding");
     }
 }

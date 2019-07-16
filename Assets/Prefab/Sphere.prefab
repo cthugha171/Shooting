@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 7488685473555260193}
   - component: {fileID: 7488685473555260194}
   - component: {fileID: 2231873877773778178}
-  - component: {fileID: 8504446881166431329}
   - component: {fileID: 7488685473555260195}
+  - component: {fileID: 1568965735668933464}
   - component: {fileID: 6390504625900468640}
   m_Layer: 15
   m_Name: Sphere
@@ -105,21 +105,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  player: {fileID: 0}
-  helth: {fileID: 0}
---- !u!114 &8504446881166431329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7488685473555260196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed02f8ab2feeaf4981cb6a0955d5d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.25
 --- !u!135 &7488685473555260195
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +118,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1568965735668933464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7488685473555260196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ed02f8ab2feeaf4981cb6a0955d5d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.2
 --- !u!54 &6390504625900468640
 Rigidbody:
   m_ObjectHideFlags: 0
