@@ -256,6 +256,17 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 1859073264066753122, guid: f3b154ae66d25b648a5acde0f66b38d4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1550636435975149938, guid: a9c53b37ab0104443bb895d4aa8cc1b1,
+        type: 3}
+    - target: {fileID: 1859073264066753122, guid: f3b154ae66d25b648a5acde0f66b38d4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndGame
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b154ae66d25b648a5acde0f66b38d4, type: 3}
 --- !u!1 &649033558
