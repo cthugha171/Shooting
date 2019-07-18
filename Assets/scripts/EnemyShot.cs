@@ -21,7 +21,7 @@ public class EnemyShot : MonoBehaviour
             //弾を撃つ処理を書く
             var ebullet = Instantiate(bullet, transform.position, transform.rotation);
             yield return new WaitForSeconds(0.2f);
-            Destroy(ebullet, 5);
+            Destroy(ebullet, 0.2f);
         }
     }
 
