@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            AudioSource.PlayClipAtPoint(se, transform.position);
+            //AudioSource.PlayClipAtPoint(se, transform.position);
             timeElapsed += Time.deltaTime;
             if(timeElapsed >= timeOut)
             {

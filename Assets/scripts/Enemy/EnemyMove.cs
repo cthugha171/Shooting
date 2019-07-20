@@ -14,7 +14,6 @@ public class EnemyMove : MonoBehaviour
     
     private Transform plPos;
     private Vector3 mov;
-    private Vector3 enemyposint;
     private int count = 10;
     private float x_abs;
     private float y_abs;
@@ -33,7 +32,6 @@ public class EnemyMove : MonoBehaviour
     {
         myData = data.statuses[dataIndext];
         gameObject.name = myData.name;
-        enemyposint = this.transform.position;
         
         mov = new Vector3(0, 1, -1);
     }
@@ -43,7 +41,6 @@ public class EnemyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        plPos = GameObject.FindGameObjectWithTag("Player").transform;
         EnemyState();
     }
 
@@ -65,12 +62,14 @@ public class EnemyMove : MonoBehaviour
                 HiSpeed();//早い
                 break;
             case 4:
+                plPos = GameObject.FindGameObjectWithTag("Player").transform;
                 Stalker();//ホーミングを撃つ
                 break;
             case 5:
                 Dropper();//アイテム落とす
                 break;
             case 6:
+                plPos = GameObject.FindGameObjectWithTag("Player").transform;
                 Cannon();//固定砲台
                 break;
         }
@@ -110,17 +109,11 @@ public class EnemyMove : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            if (this.transform.position.x >= plPos.position.x)
-            {
-                transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
-            }
+            transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
         }
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
-            if (this.transform.position.x >= plPos.position.x)
-            {
-                transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
-            }
+            transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
         }
     }
 
@@ -191,6 +184,7 @@ public class EnemyMove : MonoBehaviour
 
     void Cannon()
     {
+        transform.LookAt(plPos);
         if (SceneManager.GetActiveScene().name == "SideView")
         {
             transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);

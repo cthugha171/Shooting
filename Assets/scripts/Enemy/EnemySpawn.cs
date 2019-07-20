@@ -31,9 +31,10 @@ public class EnemySpawn : MonoBehaviour
 
     void Spawn()
     {
-        if (count % 500 == 0 && !GameObject.FindGameObjectWithTag("Boss"))
+        if (count % 100 == 0 && !GameObject.FindGameObjectWithTag("Boss"))
         {
             number = Random.Range(0, enemy.Length);
+            number = 6;
 
             posY = Random.Range(-5, 5);
             if (number == 1 || number == 6)
@@ -49,9 +50,10 @@ public class EnemySpawn : MonoBehaviour
                 Destroy(_Enemy, 50.0f);
             }
         }
-        if (count >= 1000 && !GameObject.FindGameObjectWithTag("Boss"))
+        if (count >= 10000 && !GameObject.FindGameObjectWithTag("Boss"))
         {
-            _Boss = Instantiate(Boss, transform.position, transform.rotation);
+            Quaternion rote = new Quaternion(0.0f, 180.0f, 0.0f, 1.0f);
+            _Boss = Instantiate(Boss, transform.position, rote);
             Destroy(GameObject.FindGameObjectWithTag("Enemy"));
         }
     }

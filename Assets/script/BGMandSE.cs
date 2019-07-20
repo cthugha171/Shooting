@@ -18,17 +18,7 @@ public class BGMandSE : MonoBehaviour
     {
        
     }
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.tag == "Player")
-    //    {
-    //        AS.clip = A;
-    //        AS.Play();
-    //        Debug.Log("test");
-            
-    //    }
-      
-    //}
+
     void OnTriggerEnter(Collider other)
     {
        if(other.tag =="Player")

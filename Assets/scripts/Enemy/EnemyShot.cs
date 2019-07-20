@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class EnemyShot : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
-    [SerializeField] private int shotSpeed=5;
     [SerializeField] private EnemyMove move;
+    [SerializeField] private int shotSpeed=5;
     private GameObject player;
     private GameObject _bullet;
     private Vector3 playerPos;
@@ -32,15 +32,12 @@ public class EnemyShot : MonoBehaviour
     void Update()
     {
         makeBullet++;
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
 
         if (player!=null)
         {
             Debug.Log("Player見つけたぜ");
             EnemyState();
-        }
-        else
-        {
-            return;
         }
     }
 
@@ -94,7 +91,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Debug.Log("球を発射");
                 Destroy(_bullet, 5);
@@ -104,7 +101,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, this.transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Debug.Log("球を発射");
                 Destroy(_bullet, 5);
@@ -124,7 +121,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
@@ -133,7 +130,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
@@ -146,7 +143,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
@@ -155,7 +152,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
@@ -169,10 +166,9 @@ public class EnemyShot : MonoBehaviour
 
     private void Cannon()
     {
+        transform.LookAt(playerPos);
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-            transform.LookAt(playerPos);
             if (makeBullet % 60 == 0)
             {
                 _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
@@ -182,12 +178,9 @@ public class EnemyShot : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
-            
-            playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-            this.transform.LookAt(playerPos);
             if (makeBullet % 30 == 0)
             {
-                _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
