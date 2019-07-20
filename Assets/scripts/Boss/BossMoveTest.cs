@@ -36,6 +36,8 @@ public class BossMoveTest : MonoBehaviour
 
     public int count;
 
+    public GameObject coldata;
+
     public Status MyStatus
     {
         get { return bossHealth; }
@@ -252,16 +254,38 @@ public class BossMoveTest : MonoBehaviour
         //弾道予測線を出したら
         particles[1].Stop();
         Debug.Log("弾道予測線表示..");
+        //Debug.LogWarning("atattayo");
         RedLine.SetActive(true);
         yield return new WaitForSeconds(2.0f);
+        
+        //Time.timeSinceLevelLoad;
+        //yield return null;
 
         //ビームを発射!!!
         RedLine.SetActive(false);
         particles[0].Stop();
         particles[0].Play();
         BeamCollider.SetActive(true);
+        float EndTime = Time.timeSinceLevelLoad + 5.0f;
+        while(EndTime > Time.timeSinceLevelLoad)
+        {
+            RaycastHit[] hitInfo;
+            hitInfo = Physics.BoxCastAll(coldata.transform.position, (Vector3.Scale(coldata.GetComponent<BoxCollider>().size, coldata.transform.lossyScale)) * 0.5f, transform.forward, Quaternion.identity, LayerMask.GetMask("Player"));
+            foreach (RaycastHit hit in hitInfo)
+            {
+
+                if (hit.transform.gameObject.CompareTag("Player"))
+                {
+                    Debug.Log("当たった Boss");
+                    var player = hit.transform.gameObject.GetComponent<Health>();
+                    player.Damage(MyStatus.Tatk);
+                }
+            }
+            yield return null;
+        }
+       
         Debug.Log("発射！！");
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(1.0f);
 
         //ビーム停止
         particles[0].Stop();
@@ -331,19 +355,13 @@ public class BossMoveTest : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        //if (col.gameObject.tag == "Enemy")
-        //{
-
-        //    Debug.Log("当たった AA");
-        //    var enemy = col.GetComponent<EnemyHealth>();
-        //    enemy.Damage(MyStatus.atk);
-        //}
+        
         if (collision.gameObject.tag == "Player")
         {
             //var player = collision.GetComponent<Helth>();
             health.Damage(MyStatus.atk);
         }
-        //Destroy(gameObject);
+        
     }
 
     private void OnCollisionStay(Collision collision)
@@ -352,7 +370,7 @@ public class BossMoveTest : MonoBehaviour
         {
             if (count >= 60)
             {
-                //var player = collision.GetComponent<Helth>();
+                
                 health.Damage(MyStatus.Tatk);
                 count = 0;
             }

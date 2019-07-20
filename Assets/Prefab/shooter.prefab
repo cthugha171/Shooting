@@ -113,6 +113,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -173,12 +179,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623218428604406 stripped
@@ -259,6 +259,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7121993028598178182, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4090712353830757561, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: DataIndext
@@ -269,6 +274,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -329,17 +340,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7121993028598178182, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623219448806416 stripped
@@ -425,6 +425,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -485,12 +491,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623219142077109 stripped
@@ -576,6 +576,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -636,12 +642,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623217528285129 stripped
@@ -727,6 +727,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -787,12 +793,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623217334802726 stripped
@@ -816,7 +816,7 @@ PrefabInstance:
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090712353830757702, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
@@ -878,6 +878,12 @@ PrefabInstance:
       propertyPath: dataIndext
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
+        type: 3}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -938,12 +944,6 @@ PrefabInstance:
       propertyPath: shotSpeed
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 198477080332614842, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
 --- !u!4 &2850623217398542817 stripped

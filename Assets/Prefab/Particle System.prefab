@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7307479842598783572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7307479842598783575}
+  - component: {fileID: 7307479842598783574}
+  m_Layer: 10
+  m_Name: BeamCollider
+  m_TagString: Enemy
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7307479842598783575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307479842598783572}
+  m_LocalRotation: {x: -0.999962, y: 0.008726558, z: -0, w: 0}
+  m_LocalPosition: {x: 0.005235736, y: 0.29995435, z: 24.730007}
+  m_LocalScale: {x: 1, y: 1.5000006, z: 10}
+  m_Children: []
+  m_Father: {fileID: 7396674806790455929}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7307479842598783574
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307479842598783572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.5, z: -4.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7396674806790455934
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +55,7 @@ GameObject:
   - component: {fileID: 7396674806790455929}
   - component: {fileID: 7396674806790455931}
   - component: {fileID: 7396674806790455928}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +72,8 @@ Transform:
   m_LocalRotation: {x: 0.999962, y: -0.008726558, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 7307479842598783575}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 180, y: 0, z: 1}
@@ -48,7 +93,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -115,7 +160,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 5
       minScalar: 5
       maxCurve:
         serializedVersion: 2

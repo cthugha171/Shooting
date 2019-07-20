@@ -4709,17 +4709,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 549217354124405121}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5097c510ef014eb41a5d1ab260892933, type: 3}
+  m_Script: {fileID: 11500000, guid: b170fcbc4366848468c08512117933ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beamParticle: {fileID: 549217354124405125}
+  beamParticle: {fileID: 0}
   shake: {fileID: 0}
   BeamTimer: 5
   IsShot: 0
   coldata: {fileID: 0}
+  targetTag: 
   status:
     name: 
-    atk: 0
+    atk: 30
     Tatk: 0
     hp: 0
     def: 0

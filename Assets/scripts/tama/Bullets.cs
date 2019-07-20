@@ -1,0 +1,81 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+ 
+
+public class Bullets : MonoBehaviour
+{
+    [SerializeField] private Status status;
+    [SerializeField] private UnityEvent onTrigger = null; 
+    private GameObject player;
+    private Health health;
+    // Start is called before the first frame update
+
+    public Status MyStatus
+    {
+        get { return status; }
+    }
+
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        health = player.GetComponent<Health>();
+        
+   }
+    public void Damage(Status other)
+    {
+        status.Damage(other.atk);
+    }
+    public void Damage(int atk)
+    {
+        status.Damage(atk);
+    }
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.tag == "Enemy")
+        {
+
+            Debug.Log("当たった AA");
+            var enemy = col.GetComponent<EnemyHealth>();
+            enemy.Damage(MyStatus.atk);
+        }
+        if (col.gameObject.tag == "Boss")
+        {
+
+            Debug.Log("当たった AA");
+            var enemy = col.GetComponent<BossHealth>();
+            enemy.Damage(MyStatus.atk);
+        }
+       
+        Destroy(gameObject);
+       // onTrigger.Invoke();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       
+        
+        if (collision.gameObject.tag == "Player")
+        {
+            //var player = collision.GetComponent<Helth>();
+            health.Damage(MyStatus.atk);
+        }
+        if(collision.gameObject.tag =="Ebullet")
+        {
+            Destroy(gameObject);
+        }
+        Destroy(gameObject);
+    }
+}
