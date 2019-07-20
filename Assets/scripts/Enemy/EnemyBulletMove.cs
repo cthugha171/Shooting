@@ -23,11 +23,11 @@ public class EnemyBulletMove : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            this.transform.localPosition = transform.forward * speed;
+            this.transform.localPosition += transform.forward * speed;
         }
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
-            this.transform.localPosition = transform.forward * speed;
+            this.transform.localPosition += transform.forward * speed;
         }
     }
 }

@@ -143,7 +143,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }
@@ -152,7 +152,7 @@ public class EnemyShot : MonoBehaviour
         {
             if (makeBullet % 60 == 0)
             {
-                var _bullet = Instantiate(bullet, transform.localPosition, Quaternion.identity);
+                var _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 Debug.Log("弾の射出位置：" + _bullet.transform.position);
                 Destroy(_bullet, 10);
             }

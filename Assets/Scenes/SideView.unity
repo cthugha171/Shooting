@@ -749,7 +749,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5be53bc74531d17438694b06b048fc1c, type: 2}
+      objectReference: {fileID: 2100000, guid: e3305b58fb24a80429f4bac3019cee57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228823c1f188b50439f04bfbe91f77fb, type: 3}
 --- !u!1 &1033746264
@@ -1075,13 +1075,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232126453}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.27059805, y: -0.6532815, z: 0.27059805, w: 0.6532815}
+  m_LocalPosition: {x: 21.1, y: 15.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
 --- !u!1 &1319181582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,6 +1235,12 @@ PrefabInstance:
       propertyPath: enemy.Array.size
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 7476416066318261352, guid: d157690bc9edeed4f873f4b5429f01b3,
+        type: 3}
+      propertyPath: Boss
+      value: 
+      objectReference: {fileID: 410494339274833584, guid: fb1184edc7ff30640a5449965541b37d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d157690bc9edeed4f873f4b5429f01b3, type: 3}
 --- !u!1 &1719529172
@@ -1675,7 +1681,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5152448438258304aa2a359f4fc5cbd2, type: 2}
+      objectReference: {fileID: 2100000, guid: e3305b58fb24a80429f4bac3019cee57, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 228823c1f188b50439f04bfbe91f77fb, type: 3}
 --- !u!1 &2102555716
