@@ -1341,6 +1341,11 @@ PrefabInstance:
       propertyPath: status.atk
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5909770682280778375, guid: 05d8adff78ace1446a04008d1d27ad10,
+        type: 3}
+      propertyPath: status.hp
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3921040265770034733, guid: 05d8adff78ace1446a04008d1d27ad10,
         type: 3}
       propertyPath: se
@@ -1660,9 +1665,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1000
   m_WholeNumbers: 0
-  m_Value: 100
+  m_Value: 1000
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
