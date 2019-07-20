@@ -40,7 +40,7 @@ public class BeamShoot : MonoBehaviour
         Debug.Log("----------------------------------------------------------");
        // Debug.Log(ene.name);
         beamParticle = GetComponent<ParticleSystem>();
-        InObj = GameObject.Find("Slider");
+        InObj = GameObject.Find("bomb");
         Inscr = InObj.GetComponent<SliderTest>();
         beamParticle.Stop();
         timer = BeamTimer;

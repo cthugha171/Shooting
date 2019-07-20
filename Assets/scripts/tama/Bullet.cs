@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             if(timeElapsed >= timeOut)
             {
                 timeElapsed = 0.0f;
-            var _bullet = Instantiate(bullets,transform.localPosition, transform.localRotation);
+            var _bullet = Instantiate(bullets,transform.position, transform.rotation);
             Destroy(_bullet,30);
             }
         }

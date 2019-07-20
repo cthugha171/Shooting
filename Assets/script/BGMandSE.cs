@@ -10,7 +10,7 @@ public class BGMandSE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //AS = GetComponent<AudioSource>();
+        AS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

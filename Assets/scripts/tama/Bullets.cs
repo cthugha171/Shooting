@@ -50,6 +50,7 @@ public class Bullets : MonoBehaviour
             Debug.Log("当たった AA");
             var enemy = col.GetComponent<EnemyHealth>();
             enemy.Damage(MyStatus.atk);
+            Destroy(gameObject);
         }
         if (col.gameObject.tag == "Boss")
         {
@@ -57,9 +58,10 @@ public class Bullets : MonoBehaviour
             Debug.Log("当たった AA");
             var enemy = col.GetComponent<BossHealth>();
             enemy.Damage(MyStatus.atk);
+            Destroy(gameObject);
         }
        
-        Destroy(gameObject);
+        
        // onTrigger.Invoke();
     }
 
