@@ -13,7 +13,7 @@ public class EnemyBulletMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
     }
 
     // Update is called once per frame
@@ -23,26 +23,11 @@ public class EnemyBulletMove : MonoBehaviour
 
         if (SceneManager.GetActiveScene().name == "SideView")
         {
-            this.transform.localPosition -= transform.forward * speed;
+            this.transform.localPosition = transform.forward * speed;
         }
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
-            switch (num)
-            {
-                case 0:
-                    plpos = GameObject.FindGameObjectWithTag("Player").transform.position;
-                    transform.localPosition -= new Vector3(0, speed, 0);
-                    num = 1;
-                    break;
-                case 1:
-                    gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, plpos, speed);
-                    num = 2;
-                    break;
-                default:
-                    transform.localPosition -= new Vector3(0, speed, 0);
-                    num = 0;
-                    break;
-            }
+            this.transform.localPosition = transform.forward * speed;
         }
     }
 }

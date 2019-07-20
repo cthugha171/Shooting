@@ -184,6 +184,7 @@ public class EnemyMove : MonoBehaviour
 
     void Cannon()
     {
+        transform.LookAt(plPos);
         if (SceneManager.GetActiveScene().name == "SideView")
         {
             transform.position -= new Vector3(0, 0, speed_Hard * Time.deltaTime);
