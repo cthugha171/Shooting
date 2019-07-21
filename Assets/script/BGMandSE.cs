@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BGMandSE : MonoBehaviour
 {
     public AudioSource AS;
-    public AudioClip　A,B,C;
+    public AudioClip A;
     // Start is called before the first frame update
     void Start()
     {

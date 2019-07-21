@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2254706375722286438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0000019073486, y: -2.16, z: 7.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2850623219448806416}
@@ -119,6 +119,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -173,11 +178,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -280,6 +280,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -334,11 +339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -431,6 +431,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -485,11 +490,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -582,6 +582,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -636,11 +641,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -733,6 +733,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -787,11 +792,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}
@@ -884,6 +884,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877,
         type: 3}
+    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
+        type: 3}
+      propertyPath: shotSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2962381768992658791, guid: 8f7ecc635b24275419e2bc96d3ae6762,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.minMaxState
@@ -938,11 +943,6 @@ PrefabInstance:
         type: 3}
       propertyPath: EmissionModule.rateOverTime.maxCurve.m_Curve.Array.data[1].outWeight
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3105815026835513423, guid: 8f7ecc635b24275419e2bc96d3ae6762,
-        type: 3}
-      propertyPath: shotSpeed
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f7ecc635b24275419e2bc96d3ae6762, type: 3}

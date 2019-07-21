@@ -50,7 +50,7 @@ public class EnemySpawn : MonoBehaviour
                 Destroy(_Enemy, 50.0f);
             }
         }
-        if (count >= 10000 && !GameObject.FindGameObjectWithTag("Boss"))
+        if (count >= 100 && !GameObject.FindGameObjectWithTag("Boss"))
         {
             Quaternion rote = new Quaternion(0.0f, 180.0f, 0.0f, 1.0f);
             _Boss = Instantiate(Boss, transform.position, rote);

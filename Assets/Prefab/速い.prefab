@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4565199584445432923, guid: e4c88a5b1d87589458f58c4b1239e877, type: 3}
-  shotSpeed: 5
   move: {fileID: 1711099947}
+  shotSpeed: 5
 --- !u!1 &1711099945
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711099945}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.27, z: 5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 760477053}
