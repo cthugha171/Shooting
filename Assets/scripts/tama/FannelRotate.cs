@@ -11,7 +11,7 @@ public class FannelRotate : MonoBehaviour
     private GameObject targetPos;
 
     //前に構えるときの位置
-    public float FrontPosY;
+    public float FrontPosX;
 
     void Update()
     {
@@ -23,14 +23,14 @@ public class FannelRotate : MonoBehaviour
         //プレイヤーのトランスフォームを取得
         GameObject target = GameObject.FindGameObjectWithTag("Player");
         targetPos = target;
-        transform.RotateAround(targetPos.transform.position, new Vector3(1, 0, 0), angle * Time.deltaTime);
+        transform.RotateAround(targetPos.transform.position, new Vector3(0, 1, 0), angle * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
             transform.RotateAround(targetPos.transform.position, new Vector3(0, 0, 0), angle * Time.deltaTime);
 
             //ファンネルを前につけたときのポジション
-            Vector3 FrontPos = new Vector3(targetPos.transform.position.x, targetPos.transform.position.y + FrontPosY, targetPos.transform.position.z + 2);
+            Vector3 FrontPos = new Vector3(targetPos.transform.position.x + FrontPosX, targetPos.transform.position.y, targetPos.transform.position.z + 1);
             transform.position = FrontPos;
         }
     }

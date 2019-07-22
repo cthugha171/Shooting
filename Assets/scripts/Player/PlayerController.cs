@@ -7,33 +7,38 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 0.1f;
 
-    GameObject InGMObject;
-    GameManager InGMScript;
-
-    
-
-    //範囲制限
-    public float Clampz;
-    public float Clampy;
     private Vector3 playerpos;
 
     //移動
     float MoveHor;
     float MoveVer;
 
+    GameObject PHobject;
+    public PlayerHealth PHscript;
+    private Renderer renderer;
 
     private void Start()
     {
-        InGMObject = GameObject.Find("GameManager");
-        InGMScript = InGMObject.GetComponent<GameManager>();
-        //プレイヤーの位置を取得
         playerpos = this.transform.position;
-       
+        PHobject = transform.GetChild(2).gameObject;//PlayerHit検索
+        PHscript = PHobject.GetComponent<PlayerHealth>();
+        renderer = GetComponent<Renderer>();
     }
     void Update()
     {
         Move();
         Clamp();
+
+        bool isDamage = PHscript.SetIsDamage;
+
+        if (isDamage)
+        {
+            this.gameObject.GetComponent<Renderer>().material.color = Color.blue;
+        }
+        else
+        {
+            renderer.material.color = Color.white;
+        }
     }
 
     /// <summary>
@@ -41,10 +46,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Clamp()
     {
-        Vector3 min = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-        Vector3 max = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 1));
+        Vector3 min = Camera.main.ViewportToWorldPoint(new Vector3(0.07f, 0.08f, 0));
+        Vector3 max = Camera.main.ViewportToWorldPoint(new Vector3(0.92f, 0.92f, 1));
 
-        playerpos.y = Mathf.Clamp(playerpos.y, min.y, max.y);
+        playerpos.x = Mathf.Clamp(playerpos.x, min.x, max.x);
         playerpos.z = Mathf.Clamp(playerpos.z, min.z, max.z);
 
         transform.position = playerpos;
@@ -55,23 +60,17 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Move()
     {
-        //    if (SceneManager.GetActiveScene().name == "SideView")
-        //    {
         //横移動
         MoveHor = Input.GetAxisRaw("Horizontal");
-            //縦移動
-            MoveVer = Input.GetAxisRaw("Vertical");
-            //代入
-            playerpos += new Vector3(0, MoveVer, MoveHor) * speed;
-        //}
-        //else if (SceneManager.GetActiveScene().name == "TopView")
-        //{
-        //    //横移動
-        //    MoveHor = Input.GetAxisRaw("Horizontal");
-        //    //縦移動
-        //    MoveVer = Input.GetAxisRaw("Vertical");
-        //    //代入
-        //    playerpos += new Vector3(0, -MoveHor, MoveVer) * speed;
-        //}
+        //縦移動
+        MoveVer = Input.GetAxisRaw("Vertical");
+        //左シフトを押しているときは速度低下
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            MoveHor /= 2;
+            MoveVer /= 2;
+        }
+        //代入
+        playerpos += new Vector3(MoveHor, 0, MoveVer) * speed;
     }
 }

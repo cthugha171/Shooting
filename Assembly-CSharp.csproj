@@ -60,9 +60,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ItemSpawn.cs" />
     <Compile Include="Assets\KeyButtonTest\ActiveButton.cs" />
     <Compile Include="Assets\KeyButtonTest\ChangeSelect.cs" />
     <Compile Include="Assets\KeyButtonTest\NextorBackPanel.cs" />
+    <Compile Include="Assets\My Folder\BossFannelAction.cs" />
+    <Compile Include="Assets\My Folder\BossSceneEnemyHealth.cs" />
+    <Compile Include="Assets\My Folder\BossSceneGetItem.cs" />
+    <Compile Include="Assets\My Folder\BossSceneItem.cs" />
+    <Compile Include="Assets\My Folder\Cloud.cs" />
+    <Compile Include="Assets\My Folder\DirectinPlayer.cs" />
+    <Compile Include="Assets\My Folder\FallRining.cs" />
+    <Compile Include="Assets\My Folder\HPSlider.cs" />
+    <Compile Include="Assets\My Folder\PlayerBeamShoot.cs" />
+    <Compile Include="Assets\My Folder\PlayerBullet.cs" />
+    <Compile Include="Assets\My Folder\PlayerHealth.cs" />
+    <Compile Include="Assets\My Folder\PlayerShot.cs" />
+    <Compile Include="Assets\My Folder\Rain.cs" />
+    <Compile Include="Assets\My Folder\SPSlider.cs" />
+    <Compile Include="Assets\My Folder\TrueBossBullet.cs" />
+    <Compile Include="Assets\My Folder\TrueBossHealth.cs" />
+    <Compile Include="Assets\My Folder\TrueBossMove.cs" />
+    <Compile Include="Assets\My Folder\TrueBossShot.cs" />
     <Compile Include="Assets\script\BGMandSE.cs" />
     <Compile Include="Assets\script\SceneChanger.cs" />
     <Compile Include="Assets\script\SoundBoxMove.cs" />
