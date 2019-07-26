@@ -44,7 +44,7 @@ public class SPSlider : MonoBehaviour
 
     void Accumulate()
     {
-        slider.value += 1.1f;
+        slider.value += 0.1f;
     }
 
     void StockUp()

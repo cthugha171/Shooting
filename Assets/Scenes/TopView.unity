@@ -194,7 +194,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 60
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 33.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1015,6 +1015,10 @@ PrefabInstance:
     - target: {fileID: 4496230670693936, guid: 629bbfc4ad666d742870312b13c5d268, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1514082528, guid: 629bbfc4ad666d742870312b13c5d268, type: 3}
+      propertyPath: BossHp
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 629bbfc4ad666d742870312b13c5d268, type: 3}

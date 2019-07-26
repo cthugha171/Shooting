@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statuses:
   - name: "\u7A81\u3063\u8FBC\u3080"
-    atk: 10
+    atk: 100
     Tatk: 0
     hp: 1
     def: 0
@@ -26,9 +26,9 @@ MonoBehaviour:
     def: 0
     isDead: 0
   - name: "\u786C\u3044"
-    atk: 1
+    atk: 10
     Tatk: 0
-    hp: 100
+    hp: 10
     def: 0
     isDead: 0
   - name: "\u9AD8\u901F"
@@ -52,6 +52,6 @@ MonoBehaviour:
   - name: "\u56FA\u5B9A\u4FDD\u7530\u4E95"
     atk: 30
     Tatk: 0
-    hp: 50
+    hp: 10
     def: 0
     isDead: 0

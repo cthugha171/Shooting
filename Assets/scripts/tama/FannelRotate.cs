@@ -30,7 +30,7 @@ public class FannelRotate : MonoBehaviour
             transform.RotateAround(targetPos.transform.position, new Vector3(0, 0, 0), angle * Time.deltaTime);
 
             //ファンネルを前につけたときのポジション
-            Vector3 FrontPos = new Vector3(targetPos.transform.position.x + FrontPosX, targetPos.transform.position.y, targetPos.transform.position.z + 1);
+            Vector3 FrontPos = new Vector3(targetPos.transform.position.x + FrontPosX, targetPos.transform.position.y, targetPos.transform.position.z + 2);
             transform.position = FrontPos;
         }
     }

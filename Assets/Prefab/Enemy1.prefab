@@ -137,7 +137,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 48
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &155878137389475990
 MonoBehaviour:
@@ -211,5 +211,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 7505379710041736925, guid: d2fdcf2c9cac5ee4c931b75a2c6810bf, type: 3}
-  shotSpeed: 5
   move: {fileID: 4090712353830757561}
+  shotSpeed: 5

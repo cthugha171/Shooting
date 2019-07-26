@@ -26,12 +26,23 @@ public class EnemyMove : MonoBehaviour
 
    public Status myData;//ステータスを入れる箱
 
+    private GameObject player;
+
+    private Health health;
+
+    public Status MyStatus
+    {
+        get { return myData; }
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
         myData = data.statuses[dataIndext];
         gameObject.name = myData.name;
+        player = GameObject.FindGameObjectWithTag("Player");
+        health = player.GetComponent<Health>();
         
         mov = new Vector3(0, 1, -1);
     }
@@ -192,6 +203,14 @@ public class EnemyMove : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "TopView")
         {
             transform.position -= new Vector3(0, speed_Hard * Time.deltaTime, 0);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            health.Damage(MyStatus.atk);
         }
     }
 }

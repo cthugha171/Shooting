@@ -107,12 +107,14 @@
     <Compile Include="Assets\scripts\Item\GetItem.cs" />
     <Compile Include="Assets\scripts\Item\Item.cs" />
     <Compile Include="Assets\scripts\Player\Health.cs" />
+    <Compile Include="Assets\scripts\Player\PlayerControlle.cs" />
     <Compile Include="Assets\scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\scripts\Status.cs" />
     <Compile Include="Assets\scripts\tama\Bullet.cs" />
     <Compile Include="Assets\scripts\tama\BulletMove.cs" />
     <Compile Include="Assets\scripts\tama\Bullets.cs" />
     <Compile Include="Assets\scripts\tama\FannelRotate.cs" />
+    <Compile Include="Assets\scripts\tama\FannelRotates.cs" />
     <Compile Include="Assets\scripts\tama\FannelShoot.cs" />
     <Compile Include="Assets\scripts\tama\HomingLaser.cs" />
     <Compile Include="Assets\scripts\tama\SliderTest.cs" />

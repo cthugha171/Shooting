@@ -88,7 +88,7 @@ public class BeamShoot : MonoBehaviour
                 else { state = 1; }
                 break;
             case 1:
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetKeyDown(KeyCode.Z))
                 {
                     state = 2;
                     IsShot = true;

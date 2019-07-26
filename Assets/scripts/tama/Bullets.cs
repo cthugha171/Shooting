@@ -48,8 +48,8 @@ public class Bullets : MonoBehaviour
         {
 
             Debug.Log("当たった AA");
-            var enemy = col.GetComponent<EnemyHealth>();
-            enemy.Damage(MyStatus.atk);
+            //var enemy = col.GetComponent<EnemyHealth>();
+            //enemy.Damage(MyStatus.atk);
             Destroy(gameObject);
         }
         if (col.gameObject.tag == "Boss")
@@ -78,6 +78,21 @@ public class Bullets : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+            Debug.Log("当たった AA");
+            
+            Destroy(gameObject);
+        }
+        //if (collision.gameObject.tag == "Boss")
+        //{
+
+        //    Debug.Log("当たった AA");
+        //    var enemy = collision.GetComponent<BossHealth>();
+        //    enemy.Damage(MyStatus.atk);
+        //    Destroy(gameObject);
+        //}
         Destroy(gameObject);
     }
 }

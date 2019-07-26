@@ -70,6 +70,11 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "bullets")
+        {
+            Destroy(this.gameObject);
+        }
+
         if(other.tag=="DeathPoint")
         {
             Destroy(this.gameObject);

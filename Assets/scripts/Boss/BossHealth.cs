@@ -23,6 +23,6 @@ public class BossHealth : MonoBehaviour
     public void Destroy()
     {
         Destroy(gameObject);
-        SceneManager.LoadScene("GoodEnding");
+        SceneManager.LoadScene("TopView");
     }
 }

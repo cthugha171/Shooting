@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerHp = 5;
+        PlayerHp = 10;
         BadEnd = "BadEnding";
         SetIsDamage = false;
         col = GetComponent<CapsuleCollider>();
